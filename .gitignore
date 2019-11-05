@@ -1,0 +1,7 @@
+# Binaries
+catption-gen
+catption-gen.exe
+
+# JPG files
+*.jpg
+!/assets/*.jpg
