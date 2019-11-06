@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-11-06T21:23:56+01:00",
+  "id": "codelab",
+  "duration": 0,
+  "title": "Création d'un outil de CLI en Go",
+  "authors": "Nicolas Lepage",
+  "summary": "Création d’un outil de CLI en Go",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "golang"
+  ],
+  "tags": [
+    "cli"
+  ],
+  "feedback": "https://github.com/Zenika/catption-gen/issues",
+  "url": "codelab"
+}
