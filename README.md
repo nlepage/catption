@@ -2,7 +2,7 @@
 
 > Création d'un outil de CLI pour générer des captions de chat 😻 !
 
-TODO insérer un gif animé démontrant l'outil ici
+![Codyglot](https://raw.githubusercontent.com/Zenika/catption-gen/master/demo.gif)
 
 ## 🛤 Prérequis
  * Go >= 1.12
