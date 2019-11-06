@@ -4,4 +4,4 @@ catption-gen.exe
 
 # JPG files
 *.jpg
-!/assets/*.jpg
+!/cats/*.jpg
