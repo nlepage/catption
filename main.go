@@ -1,7 +1,8 @@
 package main
 
 import (
-	"log"
+	"os"
+	"os/exec"
 
 	"github.com/fogleman/gg"
 	"github.com/spf13/cobra"
@@ -63,7 +64,7 @@ func init() {
 				return err
 			}
 
-			return nil
+			return exec.Command("xdg-open", "out.jpg").Run()
 		},
 	}
 
@@ -72,7 +73,9 @@ func init() {
 }
 
 func main() {
-	log.Fatal(cmd.Execute())
+	if err := cmd.Execute(); err != nil {
+		os.Exit(1)
+	}
 }
 
 func drawText(ctx *gg.Context, text string, ax, ay float64) {
