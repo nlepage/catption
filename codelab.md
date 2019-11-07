@@ -4,7 +4,7 @@ categories: golang
 tags: cli
 status: Published 
 authors: Nicolas Lepage
-Feedback Link: https://github.com/Zenika/catption-gen/issues
+Feedback Link: https://github.com/Zenika/catption/issues
 
 # Création d'un outil de CLI en Go
 

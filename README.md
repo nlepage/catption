@@ -1,8 +1,8 @@
-<h1 align="center">👋 Bienvenue sur le codelab catption-gen 😺</h1>
+<h1 align="center">👋 Bienvenue sur le codelab catption 😺</h1>
 
 > Création d'un outil de CLI pour générer des captions de chat 😻 !
 
-![Codyglot](https://raw.githubusercontent.com/Zenika/catption-gen/master/demo.gif)
+![Codyglot](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
 
 ## 🛤 Prérequis
  * Go >= 1.12

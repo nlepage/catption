@@ -21,7 +21,7 @@ var (
 
 func init() {
 	cmd = &cobra.Command{
-		Use:   "catption-gen",
+		Use:   "catption",
 		Short: "Cat caption generator CLI",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(_ *cobra.Command, args []string) error {

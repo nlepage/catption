@@ -1,4 +1,4 @@
-module github.com/Zenika/catption-gen
+module github.com/Zenika/catption
 
 go 1.12
 
