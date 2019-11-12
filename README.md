@@ -1,40 +1,53 @@
-<h1 align="center">👋 Bienvenue sur le codelab catption 😺</h1>
+<h1 align="center">👋 Welcome to catption 🐱</h1>
+<p>
+  <a href="https://spdx.org/licenses/Apache-2.0.html" target="_blank">
+    <img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache 2.0-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/njblepage" target="_blank">
+    <img alt="Twitter: njblepage" src="https://img.shields.io/twitter/follow/njblepage.svg?style=social" />
+  </a>
+</p>
 
-> Création d'un outil de CLI pour générer des captions de chat 😻 !
+> Cat caption generator CLI
 
-![Codyglot](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
+## Install
 
-## 🛤 Prérequis
- * Go >= 1.12
+```sh
+go get github.com/Zenika/catption
+```
 
-## 📑 Programme
+## Usage
 
- * [**Chapitre 1**](https://github.com/Zenika/catption/blob/chapter1)
-   * Installation de l'environnement de développement
-   * Lecture des arguments (package `os`)
-   * Bonus : Interprétation des flags (package `flag`)
- * [**Chapitre 2**](https://github.com/Zenika/catption/blob/chapter2)
-   * Découverte de cobra
-   * Création d'une commande
-   * Bonus : Validation des arguments
- * [**Chapitre 3**](https://github.com/Zenika/catption/blob/chapter3)
-   * Interprétation des flags
-   * Bonus : TODO
- * [**Chapitre 4**](https://github.com/Zenika/catption/blob/chapter4)
-   * Découverte de viper
-   * Lecture d'un fichier de config
-   * Bonus : TODO
- * [**Chapitre 5**](https://github.com/Zenika/catption/blob/chapter5)
-   * Connexion cobra/viper
-   * Bonus : TODO
- * [**Chapitre 6**](https://github.com/Zenika/catption/blob/chapter6)
-   * Création d'une sous-commande
-   * Écriture d'un fichier de config
-   * Bonus : Injection de variable à la compilation
- * [**Chapitre 7**](https://github.com/Zenika/catption/blob/chapter7)
-   * Interprétation d'un flag custom
-   * Bonus : Utilisation de logrus
- * [**Chapitre 8**](https://github.com/Zenika/catption/blob/chapter8)
-   * Découverte du package `os/exec`
-   * Découverte de la compilation conditionnelle
-   * Bonus : Découverte des build tags
+```sh
+catption dinner --top "a Go CLI..." --bottom "any generics yet?"
+```
+
+![catption demo](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
+
+## Why ?
+
+catption was made as a [codelab](https://zenika.github.io/catption/) for learning the basics of creating a Go CLI tool.
+
+## Author
+
+👤 **Nicolas Lepage**
+
+* Website: https://nicolas.lepage.dev/
+* Twitter: [@njblepage](https://twitter.com/njblepage)
+* Github: [@nlepage](https://github.com/nlepage)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Zenika/catption/issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2019 [Zenika](https://github.com/Zenika).<br />
+This project is [Apache 2.0](https://spdx.org/licenses/Apache-2.0.html) licensed.
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
