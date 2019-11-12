@@ -8,4 +8,4 @@ At repository root, execute `claat export -o docs/ codelab.md`
 
 Install mdtohtml with `go get -u github.com/gomarkdown/mdtohtml`
 
-At repository root, execute `mdtohtml -page -xhtml=false docs/index.md docs/index.html`
+At repository root, execute `mdtohtml -page -xhtml=false -css https://zenika.github.io/catption/index.css docs/index.md docs/index.html`

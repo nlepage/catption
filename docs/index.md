@@ -12,6 +12,8 @@
 
 ![catption demo](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
 
+## [Start the codelab](https://zenika.github.io/catption/codelab?index=catption)
+
 ## Author
 
 👤 **Nicolas Lepage**
