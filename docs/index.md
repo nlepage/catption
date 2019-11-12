@@ -12,7 +12,9 @@
 
 ![catption demo](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
 
-## [Start the codelab](https://zenika.github.io/catption/codelab?index=catption)
+<p style="font-size: 2em; text-align: center;">
+  <a href="https://zenika.github.io/catption/codelab?index=catption">Start the codelab</a>
+</p>
 
 ## Author
 
