@@ -16,8 +16,10 @@ h1, h2 {
 }
 
 blockquote {
-    color: #6a737d;
     border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    margin-inline-start: 20px;
+    padding-inline-start: 20px;
 }
 
 img {
