@@ -15,7 +15,7 @@
 </p>
 
 <p style="font-size: 2em; text-align: center;">
-  <a href="https://zenika.github.io/catption/codelab?index=catption">Start the codelab</a>
+  <a href="https://zenika.github.io/catption/codelab?index=catption">🗲 Start the codelab</a>
 </p>
 
 ## Author
