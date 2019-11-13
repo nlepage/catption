@@ -33,9 +33,9 @@ The steps marked with a 🎁 are optional.
 ### What you'll learn
  - Setup a development environment
  - Read args (package `os`)
- - Bonus: Reading flags (package `flag`)
+ - Bonus: Read flags (package `flag`)
 
-## Ch.1: Setup a development environment
+## Ch.1: Setup environment
 
 In order to go through this codelab, you are going to need a working Go development environment.
 
@@ -61,20 +61,20 @@ sudo snap install go --classic
 
 #### tarbal
 
-Follow the instructions at https://golang.org/doc/install#tarball
+Follow the instructions at [https://golang.org/doc/install#tarball](https://golang.org/doc/install#tarball)
 
 ### 🍏 Mac OS
 
-Download the package file at https://golang.org/dl/, open it, and follow the prompts.
+Download the package file at [https://golang.org/dl/](https://golang.org/dl/), open it, and follow the prompts.
 
 ### 🏁 Windows
 
-Download the MSI file at https://golang.org/dl/, open it, and follow the prompts.
+Download the MSI file at [https://golang.org/dl/](https://golang.org/dl/), open it, and follow the prompts.
 
 Positive
 : Check your installation by running `go version` and `go env`.
 
-## Ch.1: Download codelab contents
+## Ch.1: Download codelab
 
 There are two ways of downloading the codelab contents.
 The prefered way is `git`, which will allow you to keep track of your work and revert things if needed.
@@ -89,7 +89,7 @@ git clone https://github.com/Zenika/catption.git
 
 ### zip
 
-Download https://github.com/Zenika/catption/archive/master.zip and unzip it.
+Download [https://github.com/Zenika/catption/archive/master.zip](https://github.com/Zenika/catption/archive/master.zip) and unzip it.
 
 Positive
 : Each chapter of the codelab has its own directory:
@@ -99,6 +99,7 @@ Positive
 | |-📁 chapter1
 | |-📁 chapter2
 | |-📁 chapter2
+...
 ```
 Run `cd catption/codelab/chapter1` to go to chapter 1.
 
@@ -111,7 +112,7 @@ If you don't already have one, here are some popular IDEs for Go:
  - [Goland](https://www.jetbrains.com/go/)
  - vim + [vim-go](https://github.com/fatih/vim-go)
 
-Now open the codelab contents and you are ready :construction_worker:, let's Go!
+Now open the codelab contents and you are ready 👷, let's Go!
 
 ## Ch.1: Read args
 
