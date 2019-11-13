@@ -63,14 +63,15 @@
       <google-codelab-step label="Ch.1: Setup a development environment" duration="0">
         <p>In order to go through this codelab, you are going to need a working Go development environment.</p>
 <p>The minimum required Go version is 1.12.</p>
-<aside class="special"><p>Already have Go installed?</p>
+<aside class="special"><p>Already have Go installed?<br>Make sure you are running a version &gt;= 1.12 by running <code>go version</code>.<br>If it is the case you may proceed to the next step.</p>
 </aside>
-<p>Make sure you are running a version &gt;= 1.12 by running <code>go version</code>.If it is the case you may proceed to the next step.</p>
 <h2 is-upgraded>🐧 Linux</h2>
-<p>⚠ Do not use <code>apt</code> (old versions of Go)</p>
+<aside class="warning"><p>Do not use <code>apt</code> (old versions of Go)</p>
+</aside>
 <h3 is-upgraded>snap</h3>
 <p>Run:</p>
-<pre><code></code></pre>
+<pre><code>sudo snap install go --classic
+</code></pre>
 <p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
 <h3 is-upgraded>tarbal</h3>
 <p>Follow the instructions at https://golang.org/doc/install#tarball</p>

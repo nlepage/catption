@@ -43,19 +43,20 @@ The minimum required Go version is 1.12.
 
 Positive
 : Already have Go installed?
-: Make sure you are running a version >= 1.12 by running `go version`.
-: If it is the case you may proceed to the next step.
+Make sure you are running a version >= 1.12 by running `go version`.
+If it is the case you may proceed to the next step.
 
 ### 🐧 Linux
 
-⚠ Do not use `apt` (old versions of Go)
+Negative
+: Do not use `apt` (old versions of Go)
 
 #### snap
 
 Run:
 
 ```sh
-
+sudo snap install go --classic
 ```
 
 Check your installation by running `go version` and `go env`.
