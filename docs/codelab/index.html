@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Création d&#39;un outil de CLI en Go</title>
+  <title>Basics of writing a Go CLI tool</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -23,23 +23,65 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="codelab"
-                  title="Création d&#39;un outil de CLI en Go"
+                  title="Basics of writing a Go CLI tool"
                   environment="web"
                   feedback-link="https://github.com/Zenika/catption/issues">
     
-      <google-codelab-step label="Chapitre 1" duration="0">
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this codelab you will learn the basics of writing a Go CLI tool.</p>
+<h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Setup a development environment</li>
+<li>Discover <code>os</code>, <code>os/exec</code> and <code>flag</code> packages</li>
+<li>Discover <code>github.com/spf13/cobra</code> CLI library</li>
+<li>Create commands and subcommands</li>
+<li>Read command flags and args</li>
+<li>Discover <code>github.com/spf13/viper</code> config library</li>
+<li>Read and write a config file</li>
+<li>Put <code>cobra</code> and <code>viper</code> together</li>
+<li>Read environment variables</li>
+<li>Discover <code>github.com/sirupsen/logrus</code> logging library</li>
+<li>Use build time variable injection</li>
+<li>Use conditional compilation and build tags</li>
+</ul>
+<p>The steps marked with a 🎁 are optional.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.1: Introduction" duration="0">
         <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
-<li>Installation de l&#39;environnement de développement</li>
-<li>Lecture des arguments (package <code>os</code>)</li>
-<li>Bonus : Interprétation des flags (package <code>flag</code>)</li>
+<li>Setup a development environment</li>
+<li>Read args (package <code>os</code>)</li>
+<li>Bonus: Reading flags (package <code>flag</code>)</li>
 </ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Installation de l&#39;environnement de développement" duration="0">
-        
+      <google-codelab-step label="Ch.1: Setup a development environment" duration="0">
+        <p>In order to go through this codelab, you are going to need a working Go development environment.</p>
+<p>The minimum required Go version is 1.12.</p>
+<aside class="special"><p>Already have Go installed?</p>
+</aside>
+<p>Make sure you are running a version &gt;= 1.12 by running <code>go version</code>.If it is the case you may proceed to the next step.</p>
+<h2 is-upgraded>Linux</h2>
+<p>⚠ Do not use <code>apt</code> (old versions of Go)</p>
+<h3 is-upgraded>snap</h3>
+<p>Run:</p>
+<pre><code></code></pre>
+<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+<h3 is-upgraded>tarbal</h3>
+<p>Follow the instructions at https://golang.org/doc/install#tarball</p>
+<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+<h2 is-upgraded>Mac OS</h2>
+<p>Download the package file at https://golang.org/dl/, open it, and follow the prompts.</p>
+<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+<h2 is-upgraded>Windows</h2>
+<p>Download the MSI file at https://golang.org/dl/, open it, and follow the prompts.</p>
+<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+
 
       </google-codelab-step>
     
@@ -75,7 +117,7 @@
       <google-codelab-step label="Chapitre 5" duration="0">
         <ul>
 <li>Connexion cobra/viper</li>
-<li>Bonus : TODO</li>
+<li>Bonus : Lecture variable d&#39;environnement</li>
 </ul>
 
 
@@ -106,6 +148,12 @@
 <li>Découverte de la compilation conditionnelle</li>
 <li>Bonus : Découverte des build tags</li>
 </ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="FAQ" duration="0">
+        <p>ah!</p>
 
 
       </google-codelab-step>
