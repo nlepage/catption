@@ -93,6 +93,7 @@ Download [https://github.com/Zenika/catption/archive/master.zip](https://github.
 
 Positive
 : Each chapter of the codelab has its own directory:
+<code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-📁 chapter2<br>...</code>
 ```
 📂 catption
 |-📂 codelab
@@ -127,7 +128,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World !")
+	fmt.Println("Hello World!")
 }
 ```
 
@@ -135,7 +136,7 @@ Execute this program by running `go run .`.
 
 ### Format the message
 
-
+We would like to change the 
 
 ## Chapitre 2
    * Découverte de cobra
