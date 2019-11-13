@@ -39,7 +39,7 @@ The steps marked with a 🎁 are optional.
 
 In order to go through this codelab, you are going to need a working Go development environment.
 
-The minimum required Go version is 1.12.
+The minimum required version is Go 1.12.
 
 Positive
 : Already have Go installed?
@@ -59,25 +59,61 @@ Run:
 sudo snap install go --classic
 ```
 
-Check your installation by running `go version` and `go env`.
-
 #### tarbal
 
 Follow the instructions at https://golang.org/doc/install#tarball
-
-Check your installation by running `go version` and `go env`.
 
 ### 🍏 Mac OS
 
 Download the package file at https://golang.org/dl/, open it, and follow the prompts.
 
-Check your installation by running `go version` and `go env`.
-
 ### 🏁 Windows
 
 Download the MSI file at https://golang.org/dl/, open it, and follow the prompts.
 
-Check your installation by running `go version` and `go env`.
+Positive
+: Check your installation by running `go version` and `go env`.
+
+## Ch.1: Download codelab contents
+
+There are two ways of downloading the codelab contents.
+The prefered way is `git`, which will allow you to keep track of your work and revert things if needed.
+
+### git
+
+Run:
+
+```sh
+git clone https://github.com/Zenika/catption.git
+```
+
+### zip
+
+Download https://github.com/Zenika/catption/archive/master.zip and unzip it.
+
+Positive
+: Each chapter of the codelab has its own directory:
+```
+📂 catption
+|-📂 codelab
+| |-📁 chapter1
+| |-📁 chapter2
+| |-📁 chapter2
+```
+Run `cd catption/codelab/chapter1` to go to chapter 1.
+
+## Ch.1: Choose an IDE
+
+The last thing you need is a Go friendly IDE.
+
+If you don't already have one, here are some popular IDEs for Go:
+ - [Visual Studio Code](https://code.visualstudio.com/) + [vscode-go](https://github.com/microsoft/vscode-go)
+ - [Goland](https://www.jetbrains.com/go/)
+ - vim + [vim-go](https://github.com/fatih/vim-go)
+
+Now open the codelab contents and you are ready :construction_worker:, let's Go!
+
+## Ch.1: Read args
 
 ## Chapitre 2
    * Découverte de cobra

@@ -62,7 +62,7 @@
     
       <google-codelab-step label="Ch.1: Setup a development environment" duration="0">
         <p>In order to go through this codelab, you are going to need a working Go development environment.</p>
-<p>The minimum required Go version is 1.12.</p>
+<p>The minimum required version is Go 1.12.</p>
 <aside class="special"><p>Already have Go installed?<br>Make sure you are running a version &gt;= 1.12 by running <code>go version</code>.<br>If it is the case you may proceed to the next step.</p>
 </aside>
 <h2 is-upgraded>🐧 Linux</h2>
@@ -72,17 +72,47 @@
 <p>Run:</p>
 <pre><code>sudo snap install go --classic
 </code></pre>
-<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
 <h3 is-upgraded>tarbal</h3>
 <p>Follow the instructions at https://golang.org/doc/install#tarball</p>
-<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
 <h2 is-upgraded>🍏 Mac OS</h2>
 <p>Download the package file at https://golang.org/dl/, open it, and follow the prompts.</p>
-<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
 <h2 is-upgraded>🏁 Windows</h2>
 <p>Download the MSI file at https://golang.org/dl/, open it, and follow the prompts.</p>
-<p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+<aside class="special"><p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
+</aside>
 
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.1: Download codelab contents" duration="0">
+        <p>There are two ways of downloading the codelab contents.<br>The prefered way is <code>git</code>, which will allow you to keep track of your work and revert things if needed.</p>
+<h2 is-upgraded>git</h2>
+<p>Run:</p>
+<pre><code>git clone https://github.com/Zenika/catption.git
+</code></pre>
+<h2 is-upgraded>zip</h2>
+<p>Download https://github.com/Zenika/catption/archive/master.zip and unzip it.</p>
+<aside class="special"><p>Each chapter of the codelab has its own directory:<br><br><code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-📁 chapter2<br>| </code>|-📁 chapter2<br><br>Run <code>cd catption/codelab/chapter1</code> to go to chapter 1.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.1: Choose an IDE" duration="0">
+        <p>The last thing you need is a Go friendly IDE.</p>
+<p>If you don&#39;t already have one, here are some popular IDEs for Go:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> + <a href="https://github.com/microsoft/vscode-go" target="_blank">vscode-go</a></li>
+<li><a href="https://www.jetbrains.com/go/" target="_blank">Goland</a></li>
+<li>vim + <a href="https://github.com/fatih/vim-go" target="_blank">vim-go</a></li>
+</ul>
+<p>Now open the codelab contents and you are ready :construction_worker:, let&#39;s Go!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.1: Read args" duration="0">
+        
 
       </google-codelab-step>
     
