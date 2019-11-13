@@ -98,7 +98,6 @@ Positive
 |-📂 codelab
 | |-📁 chapter1
 | |-📁 chapter2
-| |-📁 chapter2
 ...
 ```
 Run `cd catption/codelab/chapter1` to go to chapter 1.
@@ -115,6 +114,28 @@ If you don't already have one, here are some popular IDEs for Go:
 Now open the codelab contents and you are ready 👷, let's Go!
 
 ## Ch.1: Read args
+
+### Run `hello.go`
+
+In `📂 catption/codelab/chapter1` you will find a classic `hello.go`:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello World !")
+}
+```
+
+Execute this program by running `go run .`.
+
+### Format the message
+
+
 
 ## Chapitre 2
    * Découverte de cobra
