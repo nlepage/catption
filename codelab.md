@@ -46,7 +46,7 @@ Positive
 : Make sure you are running a version >= 1.12 by running `go version`.
 : If it is the case you may proceed to the next step.
 
-### Linux
+### 🐧 Linux
 
 ⚠ Do not use `apt` (old versions of Go)
 
@@ -66,13 +66,13 @@ Follow the instructions at https://golang.org/doc/install#tarball
 
 Check your installation by running `go version` and `go env`.
 
-### Mac OS
+### 🍏 Mac OS
 
 Download the package file at https://golang.org/dl/, open it, and follow the prompts.
 
 Check your installation by running `go version` and `go env`.
 
-### Windows
+### 🏁 Windows
 
 Download the MSI file at https://golang.org/dl/, open it, and follow the prompts.
 
