@@ -169,7 +169,6 @@ var ii = []int{1, 2, 3, 4}
 ii[2:] // [3, 4]
 ```
 
-
 ## Chapitre 2
    * Découverte de cobra
    * Création d'une commande
