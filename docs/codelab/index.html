@@ -73,11 +73,14 @@
 <pre><code>sudo snap install go --classic
 </code></pre>
 <h3 is-upgraded>tarbal</h3>
-<p>Follow the instructions at <a href="https://golang.org/doc/install#tarball" target="_blank">https://golang.org/doc/install#tarball</a></p>
+<p>Follow the instructions at <a href="https://golang.org/doc/install#tarball" target="_blank"><p>https://golang.org/doc/install#tarball</p>
+</a></p>
 <h2 is-upgraded>🍏 Mac OS</h2>
-<p>Download the package file at <a href="https://golang.org/dl/" target="_blank">https://golang.org/dl/</a>, open it, and follow the prompts.</p>
+<p>Download the package file at <a href="https://golang.org/dl/" target="_blank"><p>https://golang.org/dl/</p>
+</a>, open it, and follow the prompts.</p>
 <h2 is-upgraded>🏁 Windows</h2>
-<p>Download the MSI file at <a href="https://golang.org/dl/" target="_blank">https://golang.org/dl/</a>, open it, and follow the prompts.</p>
+<p>Download the MSI file at <a href="https://golang.org/dl/" target="_blank"><p>https://golang.org/dl/</p>
+</a>, open it, and follow the prompts.</p>
 <aside class="special"><p>Check your installation by running <code>go version</code> and <code>go env</code>.</p>
 </aside>
 
@@ -91,7 +94,8 @@
 <pre><code>git clone https://github.com/Zenika/catption.git
 </code></pre>
 <h2 is-upgraded>zip</h2>
-<p>Download <a href="https://github.com/Zenika/catption/archive/master.zip" target="_blank">https://github.com/Zenika/catption/archive/master.zip</a> and unzip it.</p>
+<p>Download <a href="https://github.com/Zenika/catption/archive/master.zip" target="_blank"><p>https://github.com/Zenika/catption/archive/master.zip</p>
+</a> and unzip it.</p>
 <aside class="special"><p>Each chapter of the codelab has its own directory:<br><br><code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-📁 chapter2</code><br><br>Run <code>cd catption/codelab/chapter1</code> to go to chapter 1.</p>
 </aside>
 
@@ -102,9 +106,13 @@
         <p>The last thing you need is a Go friendly IDE.</p>
 <p>If you don&#39;t already have one, here are some popular IDEs for Go:</p>
 <ul>
-<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> + <a href="https://github.com/microsoft/vscode-go" target="_blank">vscode-go</a></li>
-<li><a href="https://www.jetbrains.com/go/" target="_blank">Goland</a></li>
-<li>vim + <a href="https://github.com/fatih/vim-go" target="_blank">vim-go</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank"><p>Visual Studio Code</p>
+</a> + <a href="https://github.com/microsoft/vscode-go" target="_blank"><p>vscode-go</p>
+</a></li>
+<li><a href="https://www.jetbrains.com/go/" target="_blank"><p>Goland</p>
+</a></li>
+<li>vim + <a href="https://github.com/fatih/vim-go" target="_blank"><p>vim-go</p>
+</a></li>
 </ul>
 <p>Now open the codelab contents and you are ready 👷, let&#39;s Go!</p>
 
@@ -130,16 +138,19 @@ func main() {
 <p>⌨ Create a new string variable:</p>
 <pre><code>var recipient = &#34;Gopher&#34;
 </code></pre>
-<p>⌨ Use <a href="https://golang.org/pkg/fmt/#Printf" target="_blank"><br>fmt.Printf()</a> to format the message with <code>recipient</code>.</p>
+<p>⌨ Use <a href="https://golang.org/pkg/fmt/#Printf" target="_blank"><p><code>fmt.Printf()</code></p>
+</a> to format the message with <code>recipient</code>.</p>
 <aside class="warning"><p>Unlike <code>fmt.Println()</code>, <code>fmt.Printf()</code> does not add a new line at the end of the string.<br>You must add it by appending <code>\n</code> at the end of the message.</p>
 </aside>
 <h2 is-upgraded>Read command line arguments</h2>
 <p>As you can see the main function of a Go program has no parameters.</p>
-<p>The command line arguments are available in the <a href="https://golang.org/pkg/os/#pkg-variables" target="_blank"><br>Args variable of the <br>os package</a>.</p>
+<p>The command line arguments are available in the <a href="https://golang.org/pkg/os/#pkg-variables" target="_blank"><p><code>Args</code> variable of the <code>os</code> package</p>
+</a>.</p>
 <aside class="special"><p><code>os.Args</code> has the type <code>[]string</code> (slice of string).<br>A slice is variable length array.</p>
 </aside>
 <p>⌨ Use <code>os.Args</code> to fill the <code>recipient</code> variable.</p>
-<aside class="special"><p><a href="https://golang.org/pkg/strings/#Join" target="_blank"><br>strings.Join</a> concatenates the elements of a slice of strings.</p>
+<aside class="special"><p><a href="https://golang.org/pkg/strings/#Join" target="_blank"><p><code>strings.Join</code></p>
+</a> concatenates the elements of a slice of strings.</p>
 </aside>
 <aside class="special"><p>To extract a subset of a slice, use the slice operator:<br><br><code>var ii = []int{1, 2, 3, 4}<br>ii[2:] // [3, 4]<br></code></p>
 </aside>
