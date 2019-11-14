@@ -212,7 +212,37 @@ HELLO CAPSLOCK!
     
       <google-codelab-step label="Ch.2: Create a command" duration="0">
         <p>Let&#39;s see how to recreate our hello command using Cobra.</p>
-<p>In <code>📂catption/codelab/chapter2</code> you will find a new <code>hello.go</code> with the skeleton of a cobra app.</p>
+<p>In <code>📂catption/codelab/chapter2</code> you will find a new <code>hello.go</code> with the skeleton of a cobra app:</p>
+<pre><code>package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+
+	&#34;github.com/spf13/cobra&#34;
+)
+
+var cmd = &amp;cobra.Command{
+	// FIXME fill Use and Long fields
+	RunE: func(_ *cobra.Command, args []string) error {
+		return nil
+	},
+}
+
+func main() {
+	if err := cmd.Execute(); err != nil {
+		os.Exit(1)
+	}
+}
+
+func sayHello(args []string) error {
+	if _, err := fmt.Printf(&#34;Hello %s!\n&#34;, strings.Join(args, &#34; &#34;)); err != nil {
+		return err
+	}
+	return nil
+}
+</code></pre>
 <p>⌨ Fill the <code>Use</code> and <code>Long</code> fields to the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run .</code> to see the result.</p>
 <p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code>, in order to have a working hello command.</p>
 <aside class="warning"><p><code>sayHello</code> may return an error, you may forward this error to the caller of <code>RunE</code>.</p>

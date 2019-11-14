@@ -232,7 +232,38 @@ Cobra provides:
 
 Let's see how to recreate our hello command using Cobra.
 
-In `📂catption/codelab/chapter2` you will find a new `hello.go` with the skeleton of a cobra app.
+In `📂catption/codelab/chapter2` you will find a new `hello.go` with the skeleton of a cobra app:
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+	"strings"
+
+	"github.com/spf13/cobra"
+)
+
+var cmd = &cobra.Command{
+	// FIXME fill Use and Long fields
+	RunE: func(_ *cobra.Command, args []string) error {
+		return nil
+	},
+}
+
+func main() {
+	if err := cmd.Execute(); err != nil {
+		os.Exit(1)
+	}
+}
+
+func sayHello(args []string) error {
+	if _, err := fmt.Printf("Hello %s!\n", strings.Join(args, " ")); err != nil {
+		return err
+	}
+	return nil
+}
+```
 
 ⌨ Fill the `Use` and `Long` fields to the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
 
