@@ -150,7 +150,10 @@ func main() {
       <google-codelab-step label="Ch.1: 🎁 Interpret flags" duration="0">
         <p>Flags allow to change the behavior of commands, like the <code>-r</code> flag of <code>rm</code> which enables recursive removal.</p>
 <p>The <a href="https://pkg.go.dev/flag?tab=doc" target="_blank"><code>flag</code> package</a> allows to parse the flags contained in <code>os.Args</code>.</p>
-<p>We would like our command to have a <code>-u</code> flag which uppercases the message.</p>
+<p>We would like our command to have a <code>-u</code> flag which uppercases the message:</p>
+<pre><code>$ hello -u capslock
+HELLO CAPSLOCK!
+</code></pre>
 <p>⌨ Explore the <code>flag</code> package and parse the <code>-u</code> flag in <code>hello.go</code>.</p>
 <aside class="special"><p><a href="https://pkg.go.dev/flag?tab=doc#Args" target="_blank"><code>flag.Args</code></a> returns the non-flag command-line arguments.</p>
 </aside>
@@ -166,7 +169,7 @@ func main() {
 <ul class="checklist">
 <li>Setup a development environment</li>
 <li>Read args (package <code>os</code>)</li>
-<li>Bonus: Read flags (package <code>flag</code>)</li>
+<li>🎁 Read flags (package <code>flag</code>)</li>
 </ul>
 
 

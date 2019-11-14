@@ -175,7 +175,11 @@ Flags allow to change the behavior of commands, like the `-r` flag of `rm` which
 
 The [`flag` package](https://pkg.go.dev/flag?tab=doc) allows to parse the flags contained in `os.Args`.
 
-We would like our command to have a `-u` flag which uppercases the message.
+We would like our command to have a `-u` flag which uppercases the message:
+```sh
+$ hello -u capslock
+HELLO CAPSLOCK!
+```
 
 ⌨ Explore the `flag` package and parse the `-u` flag in `hello.go`.
 
@@ -192,7 +196,7 @@ Positive
 ### What we've covered
  - Setup a development environment
  - Read args (package `os`)
- - Bonus: Read flags (package `flag`)
+ - 🎁 Read flags (package `flag`)
 
 ## Ch.2: Introduction
 
