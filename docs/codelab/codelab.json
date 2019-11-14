@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2019-11-14T02:07:12+01:00",
+  "updated": "2019-11-14T02:09:35+01:00",
   "id": "codelab",
   "duration": 0,
   "title": "Basics of writing a Go CLI tool",

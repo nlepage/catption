@@ -116,7 +116,7 @@ Now open the codelab contents and you are ready 👷, let's Go!
 
 ### Run `hello.go`
 
-In `📂 catption/codelab/chapter1` you will find a classic `hello.go`:
+In `📂catption/codelab/chapter1` you will find a classic `hello.go`:
 
 ```go
 package main
@@ -136,12 +136,12 @@ Execute this program by running `go run .`.
 
 We would like to replace `World` by a variable in our message.
 
-1 - Create a new string variable:
+Create a new string variable:
 ```go
 var recipient = "Gopher"
 ```
 
-2 - Use [`fmt.Printf()`](https://golang.org/pkg/fmt/#Printf) to format the message with `recipient`.
+Use [`fmt.Printf()`](https://golang.org/pkg/fmt/#Printf) to format the message with `recipient`.
 
 Negative
 : Unlike `fmt.Println()`, `fmt.Printf()` does not add a new line at the end of the string.
