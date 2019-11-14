@@ -3,5 +3,4 @@ catption
 catption.exe
 
 # JPG files
-*.jpg
-!/cats/*.jpg
+/*.jpg
