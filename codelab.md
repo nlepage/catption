@@ -205,7 +205,7 @@ Positive
  - Create a cobra command
  - 🎁 Validate arguments
 
-## Ch.2: github/spf13/cobra
+## Ch.2: `github/spf13/cobra`
 
 ## Ch.2: Create a command
 
