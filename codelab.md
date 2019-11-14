@@ -265,7 +265,7 @@ func sayHello(args []string) error {
 }
 ```
 
-⌨ Fill the `Use` and `Long` fields to the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
+⌨ Fill the `Use` and `Long` fields to the `cmd`  [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
 
 ⌨ Call `sayHello` in the `RunE` function of `cmd`, in order to have a working hello command.
 
