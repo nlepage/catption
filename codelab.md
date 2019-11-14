@@ -136,16 +136,38 @@ Execute this program by running `go run .`.
 
 We would like to replace `World` by a variable in our message.
 
-Create a new string variable:
+⌨ Create a new string variable:
 ```go
 var recipient = "Gopher"
 ```
 
-Use [`fmt.Printf()`](https://golang.org/pkg/fmt/#Printf) to format the message with `recipient`.
+⌨ Use [`fmt.Printf()`](https://golang.org/pkg/fmt/#Printf) to format the message with `recipient`.
 
 Negative
 : Unlike `fmt.Println()`, `fmt.Printf()` does not add a new line at the end of the string.
-You must add it by appending `\n' at the end of the message.
+You must add it by appending `\n` at the end of the message.
+
+### Read command line arguments
+
+As you can see the main function of a Go program has no parameters.
+
+The command line arguments are available in the [`Args` variable of the `os` package](https://golang.org/pkg/os/#pkg-variables).
+
+Positive
+: `os.Args` has the type `[]string` (slice of string).
+A slice is variable length array.
+
+⌨ Use `os.Args` to fill the `recipient` variable.
+
+Positive
+: [`strings.Join`](https://golang.org/pkg/strings/#Join) concatenates the elements of a slice of strings.
+
+Positive
+: To extract a subset of a slice, use the slice operator:
+```go
+var ii = []int{1, 2, 3, 4}
+ii[2:] // [3, 4]
+```
 
 ## Chapitre 2
    * Découverte de cobra
