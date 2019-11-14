@@ -209,7 +209,7 @@ Positive
 
 ## Ch.2: Create a command
 
-## Ch.2: 🎁 Validate arguments
+## Ch.2: 🎁 Validate args
 
 ## Ch.2: End
 
