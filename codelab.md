@@ -93,13 +93,11 @@ Download [https://github.com/Zenika/catption/archive/master.zip](https://github.
 
 Positive
 : Each chapter of the codelab has its own directory:
-<code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-📁 chapter2<br>...</code>
 ```
 📂 catption
 |-📂 codelab
 | |-📁 chapter1
 | |-📁 chapter2
-...
 ```
 Run `cd catption/codelab/chapter1` to go to chapter 1.
 
@@ -136,7 +134,18 @@ Execute this program by running `go run .`.
 
 ### Format the message
 
-We would like to change the 
+We would like to replace `World` by a variable in our message.
+
+1 - Create a new string variable:
+```go
+var recipient = "Gopher"
+```
+
+2 - Use [`fmt.Printf()`](https://golang.org/pkg/fmt/#Printf) to format the message with `recipient`.
+
+Negative
+: Unlike `fmt.Println()`, `fmt.Printf()` does not add a new line at the end of the string.
+You must add it by appending `\n' at the end of the message.
 
 ## Chapitre 2
    * Découverte de cobra
@@ -170,6 +179,6 @@ We would like to change the
    * Découverte de la compilation conditionnelle
    * Bonus : Découverte des build tags
 
-## FAQ
+## frequently asked questions
 
-ah!
+test
