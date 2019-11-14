@@ -265,7 +265,7 @@ func sayHello(args []string) error {
 }
 ```
 
-⌨ Fill the `Use` and `Long` fields to the `cmd`  [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
+⌨ Fill the `Use` and `Long` fields to the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
 
 ⌨ Call `sayHello` in the `RunE` function of `cmd`, in order to have a working hello command.
 
@@ -275,6 +275,14 @@ Negative
 ⌨ Finally fill the `Version` field of `cmd`, then execute `go run .` to see the result.
 
 ## Ch.2: 🎁 Validate args
+
+Our hello command needs at least one command line argument.
+
+⌨ Fill the `Args` field of `cmd` with the correct value in order to raise an error if hello receives no arguments.
+
+Positive
+: The type of `Args` is [`cobra.PositionalArgs`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#PositionalArgs), which is a function type.
+You could implement your own command-line arguments validator (this is not the goal here).
 
 ## Ch.2: End
 

@@ -253,7 +253,11 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.2: 🎁 Validate args" duration="0">
-        
+        <p>Our hello command needs at least one command line argument.</p>
+<p>⌨ Fill the <code>Args</code> field of <code>cmd</code> with the correct value in order to raise an error if hello receives no arguments.</p>
+<aside class="special"><p>The type of <code>Args</code> is <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#PositionalArgs" target="_blank"><code>cobra.PositionalArgs</code></a>, which is a function type.<br>You could implement your own command-line arguments validator (this is not the goal here).</p>
+</aside>
+
 
       </google-codelab-step>
     
