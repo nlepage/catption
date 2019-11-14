@@ -278,7 +278,7 @@ Negative
 
 Our hello command needs at least one command line argument.
 
-⌨ Fill the `Args` field of `cmd` with the correct value in order to raise an error if hello receives no arguments.
+⌨ Fill the `Args` field of `cmd` with the correct value in order to raise an error if hello doesn't receive any arguments.
 
 Positive
 : The type of `Args` is [`cobra.PositionalArgs`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#PositionalArgs), which is a function type.
