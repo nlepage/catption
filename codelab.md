@@ -130,7 +130,7 @@ func main() {
 }
 ```
 
-Execute this program by running `go run .`.
+⌨ Execute this program by running `go run .`.
 
 ### Format the message
 
@@ -155,7 +155,7 @@ The command line arguments are available in the [`Args` variable of the `os` pac
 
 Positive
 : `os.Args` has the type `[]string` (slice of string).
-A slice is variable length array.
+A slice is a variable length array.
 
 ⌨ Use `os.Args` to fill the `recipient` variable.
 
@@ -171,39 +171,75 @@ ii[2:] // [3, 4]
 
 ## Ch.1: 🎁 Interpret flags
 
-TODO
+Flags allow to change the behavior of commands, like the `-r` flag of `rm` which enables recursive removal.
 
-## Chapitre 2
-   * Découverte de cobra
-   * Création d'une commande
-   * Bonus : Validation des arguments
+The [`flag` package](https://pkg.go.dev/flag?tab=doc) allows to parse the flags contained in `os.Args`.
+
+We would like our command to have a `-u` flag which uppercases the message.
+
+⌨ Explore the `flag` package and parse the `-u` flag in `hello.go`.
+
+Positive
+: [`flag.Args`](https://pkg.go.dev/flag?tab=doc#Args) returns the non-flag command-line arguments.
+
+Positive
+: [`strings.ToUpper`](https://pkg.go.dev/strings?tab=doc#ToUpper) returns an upper case copy of a string.
+
+## Ch.1: End
+
+🎉 Congratulations! You have completed chapter 1.
+
+### What we've covered
+ - Setup a development environment
+ - Read args (package `os`)
+ - Bonus: Read flags (package `flag`)
+
+## Ch.2: Introduction
+
+### What you'll learn
+ - Discover `github/spf13/cobra`
+ - Create a cobra command
+ - 🎁 Validate arguments
+
+## Ch.2: github/spf13/cobra
+
+## Ch.2: Create a command
+
+## Ch.2: 🎁 Validate arguments
+
+## Ch.2: End
+
+### What we've covered
+ - Discover `github/spf13/cobra`
+ - Create a cobra command
+ - 🎁 Validate arguments
 
 ## Chapitre 3
    * Interprétation des flags
-   * Bonus : TODO
+   * 🎁 TODO
 
 ## Chapitre 4
    * Découverte de viper
    * Lecture d'un fichier de config
-   * Bonus : TODO
+   * 🎁 TODO
 
 ## Chapitre 5
    * Connexion cobra/viper
-   * Bonus : Lecture variable d'environnement
+   * 🎁 Lecture variable d'environnement
 
 ## Chapitre 6
    * Création d'une sous-commande
    * Écriture d'un fichier de config
-   * Bonus : Injection de variable à la compilation
+   * 🎁 Injection de variable à la compilation
 
 ## Chapitre 7
    * Interprétation d'un flag custom
-   * Bonus : Utilisation de logrus
+   * 🎁 Utilisation de logrus
 
 ## Chapitre 8
    * Découverte du package `os/exec`
    * Découverte de la compilation conditionnelle
-   * Bonus : Découverte des build tags
+   * 🎁 Découverte des build tags
 
 ## frequently asked questions
 
