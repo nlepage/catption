@@ -230,7 +230,18 @@ Cobra provides:
 
 ## Ch.2: Create a command
 
+Let's see how to recreate our hello command using Cobra.
 
+In `📂catption/codelab/chapter2` you will find a new `hello.go` with the skeleton of a cobra app.
+
+⌨ Fill the `Use` and `Long` fields to the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
+
+⌨ Call `sayHello` in the `RunE` function of `cmd`, in order to have a working hello command.
+
+Negative
+: `sayHello` may return an error, you may forward this error to the caller of `RunE`.
+
+⌨ Finally fill the `Version` field of `cmd`, then execute `go run .` to see the result.
 
 ## Ch.2: 🎁 Validate args
 
