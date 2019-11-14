@@ -130,16 +130,16 @@ func main() {
 <p>⌨ Create a new string variable:</p>
 <pre><code>var recipient = &#34;Gopher&#34;
 </code></pre>
-<p>⌨ Use <a href="https://golang.org/pkg/fmt/#Printf" target="_blank"><code>fmt.Printf()</code></a> to format the message with <code>recipient</code>.</p>
+<p>⌨ Use <a href="https://pkg.go.dev/fmt?tab=doc#Printf" target="_blank"><code>fmt.Printf()</code></a> to format the message with <code>recipient</code>.</p>
 <aside class="warning"><p>Unlike <code>fmt.Println()</code>, <code>fmt.Printf()</code> does not add a new line at the end of the string.<br>You must add it by appending <code>\n</code> at the end of the message.</p>
 </aside>
 <h2 is-upgraded>Read command line arguments</h2>
 <p>As you can see the main function of a Go program has no parameters.</p>
-<p>The command line arguments are available in the <a href="https://golang.org/pkg/os/#pkg-variables" target="_blank"><code>Args</code> variable of the <code>os</code> package</a>.</p>
+<p>The command line arguments are available in the <a href="https://pkg.go.dev/os?tab=doc#pkg-variables" target="_blank"><code>Args</code> variable of the <code>os</code> package</a>.</p>
 <aside class="special"><p><code>os.Args</code> has the type <code>[]string</code> (slice of string).<br>A slice is variable length array.</p>
 </aside>
 <p>⌨ Use <code>os.Args</code> to fill the <code>recipient</code> variable.</p>
-<aside class="special"><p><a href="https://golang.org/pkg/strings/#Join" target="_blank"><code>strings.Join</code></a> concatenates the elements of a slice of strings.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#Join" target="_blank"><code>strings.Join</code></a> concatenates the elements of a slice of strings.</p>
 </aside>
 <aside class="special"><p>To extract a subset of a slice, use the slice operator:<br><br><code>var ii = []int{1, 2, 3, 4}<br>ii[2:] // [3, 4]<br></code></p>
 </aside>
