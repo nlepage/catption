@@ -286,6 +286,8 @@ You could implement your own command-line arguments validator (this is not the g
 
 ## Ch.2: End
 
+🎉 Congratulations! You have completed chapter 2.
+
 ### What we've covered
  - Discover `github/spf13/cobra`
  - Create a cobra command
