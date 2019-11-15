@@ -293,9 +293,19 @@ You could implement your own command-line arguments validator (this is not the g
  - Create a cobra command
  - 🎁 Validate arguments
 
-## Chapitre 3
-   * Interprétation des flags
-   * 🎁 TODO
+## Ch.3: Introduction
+
+### What you'll learn
+ - Interpret flags
+ - 🎁 ?
+
+## Ch.3: Interpret flags
+
+## Ch3.: End
+
+### What we've covered
+ - Interpret flags
+ - 🎁 ?
 
 ## Chapitre 4
    * Découverte de viper
