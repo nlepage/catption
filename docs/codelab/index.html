@@ -92,7 +92,7 @@
 </code></pre>
 <h2 is-upgraded>zip</h2>
 <p>Download <a href="https://github.com/Zenika/catption/archive/master.zip" target="_blank">https://github.com/Zenika/catption/archive/master.zip</a> and unzip it.</p>
-<aside class="special"><p>Each chapter of the codelab has its own directory:<br><br><code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-�</code>��� chapter2<br><br>Run <code>cd catption/codelab/chapter1</code> to go to chapter 1.</p>
+<aside class="special"><p>Each chapter of the codelab has its own directory:<br><br><code>📂 catption<br>|-📂 codelab<br>| |-📁 chapter1<br>| |-📁 chapter2</code><br><br>Run <code>cd catption/codelab/chapter1</code> to go to chapter 1.</p>
 </aside>
 
 
@@ -113,7 +113,7 @@
     
       <google-codelab-step label="Ch.1: Read args" duration="0">
         <h2 is-upgraded>Run <code>hello.go</code></h2>
-<p>In <code>📂catption/codelab/ch</code>apter1 you will find a classic <code>hello.go</code>:</p>
+<p>In <code>📂catption/codelab/chapter1</code> you will find a classic <code>hello.go</code>:</p>
 <pre><code>package main
 
 import (
@@ -130,16 +130,16 @@ func main() {
 <p>⌨ Create a new string variable:</p>
 <pre><code>var recipient = &#34;Gopher&#34;
 </code></pre>
-<p>⌨ Use <a href="https://pkg.go.dev/fmt?tab=doc#Printf" target="_blank"><br>fmt.Printf()</a> to format the message with <code>recipient</code>.</p>
+<p>⌨ Use <a href="https://pkg.go.dev/fmt?tab=doc#Printf" target="_blank"><code>fmt.Printf()</code></a> to format the message with <code>recipient</code>.</p>
 <aside class="warning"><p>Unlike <code>fmt.Println()</code>, <code>fmt.Printf()</code> does not add a new line at the end of the string.<br>You must add it by appending <code>\n</code> at the end of the message.</p>
 </aside>
 <h2 is-upgraded>Read command line arguments</h2>
 <p>As you can see the main function of a Go program has no parameters.</p>
-<p>The command line arguments are available in the <a href="https://pkg.go.dev/os?tab=doc#pkg-variables" target="_blank"><br>Args variable of the <br>os package</a>.</p>
+<p>The command line arguments are available in the <a href="https://pkg.go.dev/os?tab=doc#pkg-variables" target="_blank"><code>Args</code> variable of the <code>os</code> package</a>.</p>
 <aside class="special"><p><code>os.Args</code> has the type <code>[]string</code> (slice of string).<br>A slice is a variable length array.</p>
 </aside>
 <p>⌨ Use <code>os.Args</code> to fill the <code>recipient</code> variable.</p>
-<aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#Join" target="_blank"><br>strings.Join</a> concatenates the elements of a slice of strings.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#Join" target="_blank"><code>strings.Join</code></a> concatenates the elements of a slice of strings.</p>
 </aside>
 <aside class="special"><p>To extract a subset of a slice, use the slice operator:<br><br><code>var ii = []int{1, 2, 3, 4}<br>ii[2:] // [3, 4]<br></code></p>
 </aside>
@@ -149,15 +149,15 @@ func main() {
     
       <google-codelab-step label="Ch.1: 🎁 Interpret flags" duration="0">
         <p>Flags allow to change the behavior of commands, like the <code>-r</code> flag of <code>rm</code> which enables recursive removal.</p>
-<p>The <a href="https://pkg.go.dev/flag?tab=doc" target="_blank"><br>flag package</a> allows to parse the flags contained in <code>os.Args</code>.</p>
+<p>The <a href="https://pkg.go.dev/flag?tab=doc" target="_blank"><code>flag</code> package</a> allows to parse the flags contained in <code>os.Args</code>.</p>
 <p>We would like our command to have a <code>-u</code> flag which uppercases the message:</p>
 <pre><code>$ hello -u capslock
 HELLO CAPSLOCK!
 </code></pre>
 <p>⌨ Explore the <code>flag</code> package and parse the <code>-u</code> flag in <code>hello.go</code>.</p>
-<aside class="special"><p><a href="https://pkg.go.dev/flag?tab=doc#Args" target="_blank"><br>flag.Args</a> returns the non-flag command-line arguments.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/flag?tab=doc#Args" target="_blank"><code>flag.Args</code></a> returns the non-flag command-line arguments.</p>
 </aside>
-<aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#ToUpper" target="_blank"><br>strings.ToUpper</a> returns an upper case copy of a string.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#ToUpper" target="_blank"><code>strings.ToUpper</code></a> returns an upper case copy of a string.</p>
 </aside>
 
 
@@ -213,7 +213,7 @@ HELLO CAPSLOCK!
     
       <google-codelab-step label="Ch.2: Create a command" duration="0">
         <p>Let&#39;s see how to recreate our hello command using Cobra.</p>
-<p>In <code>📂catption/codelab/ch</code>apter2 you will find a new <code>hello.go</code> with the skeleton of a cobra app:</p>
+<p>In <code>📂catption/codelab/chapter2</code> you will find a new <code>hello.go</code> with the skeleton of a cobra app:</p>
 <pre><code>package main
 
 import (
@@ -256,7 +256,7 @@ func sayHello(args []string) error {
       <google-codelab-step label="Ch.2: 🎁 Validate args" duration="0">
         <p>Our hello command needs at least one command line argument.</p>
 <p>⌨ Fill the <code>Args</code> field of <code>cmd</code> with the correct value in order to raise an error if hello doesn&#39;t receive any arguments.</p>
-<aside class="special"><p>The type of <code>Args</code> is <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#PositionalArgs" target="_blank"><br>cobra.PositionalArgs</a>, which is a function type.<br>You could implement your own command-line arguments validator (this is not the goal here).</p>
+<aside class="special"><p>The type of <code>Args</code> is <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#PositionalArgs" target="_blank"><code>cobra.PositionalArgs</code></a>, which is a function type.<br>You could implement your own command-line arguments validator (this is not the goal here).</p>
 </aside>
 
 
@@ -286,7 +286,7 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.3: Interpret flags" duration="0">
-        <p>In <code>📂catption/codelab/ch</code>apter3 you will find a <code>catption.go</code> with a new command:</p>
+        <p>In <code>📂catption/codelab/chapter3</code> you will find a <code>catption.go</code> with a new command:</p>
 <pre><code>var (
 	top, bottom            string
 	size, fontSize, margin float64
@@ -324,10 +324,198 @@ func sayHello(args []string) error {
 <li><code>top</code> and <code>bottom</code> string flags</li>
 <li><code>size</code>, <code>fontSize</code> and <code>margin</code> float flags</li>
 </ul>
-<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><br>Command.Flags</a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><br>FlagSet</a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
 </aside>
-<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><br>IntVar</a>, expect a pointer as first argument.<br><code>go<br>var i = 42<br>var x = &amp;i // x is a pointer to i and has the type *int</code><br><br>## Ch.3 Flag shorthand<br>TODO<br>## Ch.3: End<br>🎉 Congratulations! You have completed chapter 3.<br>### What we&#39;ve covered<br>- Interpret flags<br>- 🎁 Flag shorthand<br>## Ch.4: Introduction<br>### What you&#39;ll learn<br>- Discover <code>github.com/spf13/viper</code><br>- Read a config file<br>- 🎁 ?<br>## Ch.4: Discover viper<br>## Ch.4: Read config file<br>## Ch.4: End<br>🎉 Congratulations! You have completed chapter 4.<br>### What we&#39;ve covered<br>- Discover <code>github.com/spf13/viper</code><br>- Read a config file<br>- 🎁 ?<br>## Ch.5: Introduction<br>### What you&#39;ll learn<br>- Connect cobra and viper<br>- 🎁 Read environment variables<br>## Ch.5: cobra 🔌 viper<br>## Ch.5: 🎁 Read env vars<br>## Ch.5: End<br>🎉 Congratulations! You have completed chapter 5.<br>### What we&#39;ve covered<br>- Connect cobra and viper<br>- 🎁 Read environment variables<br>## Ch.6: Introduction<br>### What you&#39;ll learn<br>- Create a subcommand<br>- Write a config file<br>- 🎁 Inject compile time variables<br>## Ch.6: Subcommands<br>## Ch.6: Write config file<br>## Ch.6: 🎁 Compile vars<br>## Ch.6: End<br>🎉 Congratulations! You have completed chapter 6.<br>### What we&#39;ve covered<br>- Create a subcommand<br>- Write a config file<br>- 🎁 Inject compile time variables<br>## Ch.7: Introduction<br>### What you&#39;ll learn<br>- Interpret custom flags<br>- 🎁 Discover <code>github.com/sirupsen/logrus</code><br>## Ch.7: Custom flags<br>## Ch.7: 🎁 Discover logrus<br>## Ch.7: End<br>🎉 Congratulations! You have completed chapter 7.<br>### What we&#39;ve covered<br>- Interpret custom flags<br>- 🎁 Discover <code>github.com/sirupsen/logrus</code><br>## Ch.8: Introduction<br>### What you&#39;ll learn<br>- Discover <code>os/exec</code> package<br>- Use conditional compilation<br>- 🎁  Use build tags<br>## Ch.8: Discover os/exec<br>## Ch.8: Conditional compile<br>## Ch.8: 🎁 Build tags<br>## Ch.8: End<br>🎉 Congratulations! You have completed chapter 8.<br>### What we&#39;ve covered<br>- Discover <code>os/exec</code> package<br>- Use conditional compilation<br>- 🎁  Use build tags</p>
+<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br><br><code>var i = 42<br>var x = &amp;i // x is a pointer to i and has the type *int<br></code></p>
 </aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.3 Flag shorthand" duration="0">
+        <p>TODO</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.3: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 3.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Interpret flags</li>
+<li>🎁 Flag shorthand</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.4: Introduction" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Discover <code>github.com/spf13/viper</code></li>
+<li>Read a config file</li>
+<li>🎁 ?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.4: Discover viper" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.4: Read config file" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.4: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 4.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Discover <code>github.com/spf13/viper</code></li>
+<li>Read a config file</li>
+<li>🎁 ?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.5: Introduction" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Connect cobra and viper</li>
+<li>🎁 Read environment variables</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.5: cobra 🔌 viper" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.5: 🎁 Read env vars" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.5: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 5.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Connect cobra and viper</li>
+<li>🎁 Read environment variables</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.6: Introduction" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Create a subcommand</li>
+<li>Write a config file</li>
+<li>🎁 Inject compile time variables</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.6: Subcommands" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.6: Write config file" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.6: 🎁 Compile vars" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.6: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 6.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Create a subcommand</li>
+<li>Write a config file</li>
+<li>🎁 Inject compile time variables</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.7: Introduction" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Interpret custom flags</li>
+<li>🎁 Discover <code>github.com/sirupsen/logrus</code></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.7: Custom flags" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.7: 🎁 Discover logrus" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.7: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 7.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Interpret custom flags</li>
+<li>🎁 Discover <code>github.com/sirupsen/logrus</code></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.8: Introduction" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Discover <code>os/exec</code> package</li>
+<li>Use conditional compilation</li>
+<li>🎁  Use build tags</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.8: Discover os/exec" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.8: Conditional compile" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.8: 🎁 Build tags" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ch.8: End" duration="0">
+        <p>🎉 Congratulations! You have completed chapter 8.</p>
+<h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
+<ul class="checklist">
+<li>Discover <code>os/exec</code> package</li>
+<li>Use conditional compilation</li>
+<li>🎁  Use build tags</li>
+</ul>
 
 
       </google-codelab-step>
