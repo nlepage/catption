@@ -351,11 +351,10 @@ Positive
 
 Positive
 : Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
-```go
+```
 var i = 42
 var x = &i // x is a pointer to i and has the type *int
 ```
-
 
 ## Ch.3 Flag shorthand
 
