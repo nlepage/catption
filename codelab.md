@@ -205,7 +205,7 @@ Positive
  - Create a cobra command
  - 🎁 Validate arguments
 
-## Ch.2: github/spf13/cobra
+## Ch.2: Discover cobra
 
 > Cobra is a library for creating powerful modern CLI applications.
 
@@ -316,7 +316,7 @@ You could implement your own command-line arguments validator (this is not the g
  - Read a config file
  - 🎁 ?
 
-## Ch.4: github.com/spf13/viper
+## Ch.4: Discover viper
 
 ## Ch.4: Read config file
 
@@ -335,7 +335,7 @@ You could implement your own command-line arguments validator (this is not the g
  - Connect cobra and viper
  - 🎁 Read environment variables
 
-## Ch.5: Connect cobra/viper
+## Ch.5: cobra 🔌 viper
 
 ## Ch.5: 🎁 Read env vars
 
@@ -354,11 +354,11 @@ You could implement your own command-line arguments validator (this is not the g
  - Write a config file
  - 🎁 Inject compile time variables
 
-## Ch.6: Create subcommand
+## Ch.6: Subcommands
 
 ## Ch.6: Write config file
 
-## Ch.6: 🎁 Compile time vars
+## Ch.6: 🎁 Compile vars
 
 ## Ch.6: End
 
@@ -396,7 +396,7 @@ You could implement your own command-line arguments validator (this is not the g
 
 ## Ch.8: Discover os/exec
 
-## Ch.8: Conditional compilation
+## Ch.8: Conditional compile
 
 ## Ch.8: 🎁 Build tags
 
