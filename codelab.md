@@ -301,7 +301,7 @@ Enough of hello messages, let's start writing our cat caption CLI 🐱
 
 ### What you'll learn
  - Interpret flags
- - 🎁 ?
+ - 🎁 Flag shorthand
 
 ## Ch.3: Interpret flags
 
@@ -357,13 +357,17 @@ var x = &i // x is a pointer to i and has the type *int
 ```
 
 
+## Ch.3 Flag shorthand
+
+TODO
+
 ## Ch.3: End
 
 🎉 Congratulations! You have completed chapter 3.
 
 ### What we've covered
  - Interpret flags
- - 🎁 ?
+ - 🎁 Flag shorthand
 
 ## Ch.4: Introduction
 
