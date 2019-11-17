@@ -176,7 +176,8 @@ HELLO CAPSLOCK!
       </google-codelab-step>
     
       <google-codelab-step label="Ch.2: Introduction" duration="0">
-        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+        <p>Start using libraries 🐍</p>
+<h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
 <li>Discover <code>github/spf13/cobra</code></li>
 <li>Create a cobra command</li>
@@ -243,7 +244,7 @@ func sayHello(args []string) error {
 	return nil
 }
 </code></pre>
-<p>⌨ Fill the <code>Use</code> and <code>Long</code> fields to the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run .</code> to see the result.</p>
+<p>⌨ Fill the <code>Use</code> and <code>Long</code> fields of the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run .</code> to see the result.</p>
 <p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code>, in order to have a working hello command.</p>
 <aside class="warning"><p><code>sayHello</code> may return an error, you may forward this error to the caller of <code>RunE</code>.</p>
 </aside>
@@ -274,7 +275,8 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.3: Introduction" duration="0">
-        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+        <p>Enough of hello messages, let&#39;s start writing our cat caption CLI 🐱</p>
+<h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
 <li>Interpret flags</li>
 <li>🎁 ?</li>

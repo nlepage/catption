@@ -200,6 +200,8 @@ Positive
 
 ## Ch.2: Introduction
 
+Start using libraries 🐍
+
 ### What you'll learn
  - Discover `github/spf13/cobra`
  - Create a cobra command
@@ -265,7 +267,7 @@ func sayHello(args []string) error {
 }
 ```
 
-⌨ Fill the `Use` and `Long` fields to the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
+⌨ Fill the `Use` and `Long` fields of the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
 
 ⌨ Call `sayHello` in the `RunE` function of `cmd`, in order to have a working hello command.
 
@@ -295,11 +297,16 @@ You could implement your own command-line arguments validator (this is not the g
 
 ## Ch.3: Introduction
 
+Enough of hello messages, let's start writing our cat caption CLI 🐱
+
 ### What you'll learn
  - Interpret flags
  - 🎁 ?
 
 ## Ch.3: Interpret flags
+
+
+
 
 ## Ch.3: End
 
