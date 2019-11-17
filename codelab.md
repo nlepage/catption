@@ -338,7 +338,7 @@ However the variables used to setup the catption have not been initialized.
 
 ⌨ In the `init` function, setup `cmd`'s flags:
  - `top` and `bottom` string flags
- - `size`, `fontSize` and `margin` float flags
+ - `size`, `fontSize` and `margin` float flags (Use `catption.DefaultSize`, `catption.DefaultFontSize` and `catption.DefaultMargin` as default values)
 
 Positive
 : [`Command.Flags`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags) returns the [`FlagSet`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet) of a command.

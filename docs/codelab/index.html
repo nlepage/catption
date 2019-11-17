@@ -321,7 +321,7 @@ func sayHello(args []string) error {
 <p>⌨ In the <code>init</code> function, setup <code>cmd</code>&#39;s flags:</p>
 <ul>
 <li><code>top</code> and <code>bottom</code> string flags</li>
-<li><code>size</code>, <code>fontSize</code> and <code>margin</code> float flags</li>
+<li><code>size</code>, <code>fontSize</code> and <code>margin</code> float flags (Use <code>catption.DefaultSize</code>, <code>catption.DefaultFontSize</code> and <code>catption.DefaultMargin</code> as default values)</li>
 </ul>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
 </aside>
