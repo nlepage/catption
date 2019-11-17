@@ -318,6 +318,17 @@ func sayHello(args []string) error {
 <li>Setup the catption&#39;s parameters</li>
 <li>Write the catption to <code>out.jpg</code></li>
 </ol>
+<p>However the variables used to setup the catption have not been initialized.</p>
+<p>⌨ In the <code>init</code> function, setup <code>cmd</code>&#39;s flags:</p>
+<ul>
+<li><code>top</code> and <code>bottom</code> string flags</li>
+<li><code>size</code>, <code>fontSize</code> and <code>margin</code> float flags</li>
+</ul>
+<p>Positive<br> : <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br> The <code>FlagSet</code> allows to setup the flags of a command.</p>
+<p>Positive<br> : Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.</p>
+<pre><code> var i = 42
+ var x = &amp;i // x is a pointer to i and has the type *int
+</code></pre>
 
 
       </google-codelab-step>
