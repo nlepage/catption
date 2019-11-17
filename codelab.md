@@ -163,11 +163,8 @@ Positive
 : [`strings.Join`](https://pkg.go.dev/strings?tab=doc#Join) concatenates the elements of a slice of strings.
 
 Positive
-: To extract a subset of a slice, use the slice operator:
-```
-var ii = []int{1, 2, 3, 4}
-ii[2:] // [3, 4]
-```
+: To extract a subset of a slice, use the slice operator.
+Having `var ii = []int{1, 2, 3, 4}`, `ii[2:]` will give you the slice `[3, 4]`
 
 ## Ch.1: 🎁 Interpret flags
 
@@ -350,12 +347,8 @@ Positive
  The `FlagSet` allows to setup the flags of a command.
 
 Positive
-: Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument:
-
-```go
-var i = 42
-var x = &i // x is a pointer to i and has the type *int
-```
+: Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
+Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
 
 ## Ch.3 Flag shorthand
 

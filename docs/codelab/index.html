@@ -141,7 +141,7 @@ func main() {
 <p>⌨ Use <code>os.Args</code> to fill the <code>recipient</code> variable.</p>
 <aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#Join" target="_blank"><code>strings.Join</code></a> concatenates the elements of a slice of strings.</p>
 </aside>
-<aside class="special"><p>To extract a subset of a slice, use the slice operator:<br><br><code>var ii = []int{1, 2, 3, 4}<br>ii[2:] // [3, 4]<br></code></p>
+<aside class="special"><p>To extract a subset of a slice, use the slice operator.<br>Having <code>var ii = []int{1, 2, 3, 4}</code>, <code>ii[2:]</code> will give you the slice <code>[3, 4]</code></p>
 </aside>
 
 
@@ -326,11 +326,8 @@ func sayHello(args []string) error {
 </ul>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
 </aside>
-<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument:</p>
+<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br>Having <code>var i = 42</code>, use <code>&amp;i</code> to get a pointer to <code>i</code>, <code>&amp;i</code> has the type <code>*int</code>.</p>
 </aside>
-<pre><code>var i = 42
-var x = &amp;i // x is a pointer to i and has the type *int
-</code></pre>
 
 
       </google-codelab-step>
