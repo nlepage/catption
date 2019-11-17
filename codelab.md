@@ -301,35 +301,110 @@ You could implement your own command-line arguments validator (this is not the g
 
 ## Ch.3: Interpret flags
 
-## Ch3.: End
+## Ch.3: End
+
+🎉 Congratulations! You have completed chapter 3.
 
 ### What we've covered
  - Interpret flags
  - 🎁 ?
 
-## Chapitre 4
-   * Découverte de viper
-   * Lecture d'un fichier de config
-   * 🎁 TODO
+## Ch.4: Introduction
 
-## Chapitre 5
-   * Connexion cobra/viper
-   * 🎁 Lecture variable d'environnement
+### What you'll learn
+ - Discover `github.com/spf13/viper`
+ - Read a config file
+ - 🎁 ?
 
-## Chapitre 6
-   * Création d'une sous-commande
-   * Écriture d'un fichier de config
-   * 🎁 Injection de variable à la compilation
+## Ch.4: github.com/spf13/viper
 
-## Chapitre 7
-   * Interprétation d'un flag custom
-   * 🎁 Utilisation de logrus
+## Ch.4: Read config file
 
-## Chapitre 8
-   * Découverte du package `os/exec`
-   * Découverte de la compilation conditionnelle
-   * 🎁 Découverte des build tags
+## Ch.4: End
 
-## frequently asked questions
+🎉 Congratulations! You have completed chapter 4.
 
-test
+### What we've covered
+ - Discover `github.com/spf13/viper`
+ - Read a config file
+ - 🎁 ?
+
+## Ch.5: Introduction
+
+### What you'll learn
+ - Connect cobra and viper
+ - 🎁 Read environment variables
+
+## Ch.5: Connect cobra/viper
+
+## Ch.5: 🎁 Read env vars
+
+## Ch.5: End
+
+🎉 Congratulations! You have completed chapter 5.
+
+### What we've covered
+ - Connect cobra and viper
+ - 🎁 Read environment variables
+
+## Ch.6: Introduction
+
+### What you'll learn
+ - Create a subcommand
+ - Write a config file
+ - 🎁 Inject compile time variables
+
+## Ch.6: Create subcommand
+
+## Ch.6: Write config file
+
+## Ch.6: 🎁 Compile time vars
+
+## Ch.6: End
+
+🎉 Congratulations! You have completed chapter 6.
+
+### What we've covered
+ - Create a subcommand
+ - Write a config file
+ - 🎁 Inject compile time variables
+
+## Ch.7: Introduction
+
+### What you'll learn
+ - Interpret custom flags
+ - 🎁 Discover `github.com/sirupsen/logrus`
+
+## Ch.7: Custom flags
+
+## Ch.7: 🎁 Discover logrus
+
+## Ch.7: End
+
+🎉 Congratulations! You have completed chapter 7.
+
+### What we've covered
+ - Interpret custom flags
+ - 🎁 Discover `github.com/sirupsen/logrus`
+
+## Ch.8: Introduction
+
+### What you'll learn
+ - Discover `os/exec` package
+ - Use conditional compilation
+ - 🎁  Use build tags
+
+## Ch.8: Discover os/exec
+
+## Ch.8: Conditional compilation
+
+## Ch.8: 🎁 Build tags
+
+## Ch.8: End
+
+🎉 Congratulations! You have completed chapter 8.
+
+### What we've covered
+ - Discover `os/exec` package
+ - Use conditional compilation
+ - 🎁  Use build tags
