@@ -305,8 +305,39 @@ Enough of hello messages, let's start writing our cat caption CLI 🐱
 
 ## Ch.3: Interpret flags
 
+In `📂catption/codelab/chapter3` you will find a `catption.go` with a new command:
 
+```go
+var (
+	top, bottom            string
+	size, fontSize, margin float64
 
+	cmd = &cobra.Command{
+		Use:     "catption",
+		Long:    "Cat caption generator CLI",
+		Args:    cobra.ExactArgs(1),
+		Version: "chapter3",
+		RunE: func(_ *cobra.Command, args []string) error {
+			var name = args[0]
+
+			cat, err := catption.LoadJPG(name)
+			if err != nil {
+				return err
+			}
+
+			cat.Top, cat.Bottom = top, bottom
+			cat.Size, cat.FontSize, cat.Margin = size, fontSize, margin
+
+			return cat.SaveJPG("out.jpg")
+		},
+	}
+)
+```
+
+This command does 3 things:
+1. Create a catption by loading a JPEG file
+2. Setup the catption's parameters
+3. Write the catption to `out.jpg`
 
 ## Ch.3: End
 

@@ -286,7 +286,39 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.3: Interpret flags" duration="0">
-        
+        <p>In <code>📂catption/codelab/chapter3</code> you will find a <code>catption.go</code> with a new command:</p>
+<pre><code>var (
+	top, bottom            string
+	size, fontSize, margin float64
+
+	cmd = &amp;cobra.Command{
+		Use:     &#34;catption&#34;,
+		Long:    &#34;Cat caption generator CLI&#34;,
+		Args:    cobra.ExactArgs(1),
+		Version: &#34;chapter3&#34;,
+		RunE: func(_ *cobra.Command, args []string) error {
+			var name = args[0]
+
+			cat, err := catption.LoadJPG(name)
+			if err != nil {
+				return err
+			}
+
+			cat.Top, cat.Bottom = top, bottom
+			cat.Size, cat.FontSize, cat.Margin = size, fontSize, margin
+
+			return cat.SaveJPG(&#34;out.jpg&#34;)
+		},
+	}
+)
+</code></pre>
+<p>This command does 3 things:</p>
+<ol type="1">
+<li>Create a catption by loading a JPEG file</li>
+<li>Setup the catption&#39;s parameters</li>
+<li>Write the catption to <code>out.jpg</code></li>
+</ol>
+
 
       </google-codelab-step>
     
