@@ -326,14 +326,22 @@ func sayHello(args []string) error {
 </ul>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
 </aside>
-<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br>Having <code>var i = 42</code>, use <code>&amp;i</code> to get a pointer to <code>i</code>, <code>&amp;i</code> has the type <code>*int</code>.</p>
+<aside class="special"><p>Some methods of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br>Having <code>var i = 42</code>, use <code>&amp;i</code> to get a pointer to <code>i</code>, <code>&amp;i</code> has the type <code>*int</code>.</p>
 </aside>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.3 Flag shorthand" duration="0">
-        <p>TODO</p>
+        <p>Flag shorthands allow users to type more concise commands.</p>
+<p>⌨ Add some shorthands to <code>cmd</code>:</p>
+<ul>
+<li><code>-t</code> for <code>--top</code></li>
+<li><code>-b</code> for <code>--bottom</code></li>
+<li><code>-s</code> for <code>--size</code></li>
+</ul>
+<aside class="special"><p>All <code>FlagSet</code> methods have a shorthand variant.<br>To add a shorthand to an int flag, use <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.IntVarP" target="_blank"><code>IntVarP</code></a> instead of <code>IntVar</code>.</p>
+</aside>
 
 
       </google-codelab-step>

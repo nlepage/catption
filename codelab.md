@@ -347,12 +347,21 @@ Positive
  The `FlagSet` allows to setup the flags of a command.
 
 Positive
-: Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
+: Some methods of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
 Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
 
 ## Ch.3 Flag shorthand
 
-TODO
+Flag shorthands allow users to type more concise commands.
+
+⌨ Add some shorthands to `cmd`:
+ - `-t` for `--top`
+ - `-b` for `--bottom`
+ - `-s` for `--size`
+
+Positive
+: All `FlagSet` methods have a shorthand variant.
+To add a shorthand to an int flag, use [`IntVarP`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.IntVarP) instead of `IntVar`.
 
 ## Ch.3: End
 
