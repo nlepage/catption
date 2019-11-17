@@ -345,16 +345,16 @@ However the variables used to setup the catption have not been initialized.
  - `top` and `bottom` string flags
  - `size`, `fontSize` and `margin` float flags
 
- Positive
- : [`Command.Flags`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags) returns the [`FlagSet`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet) of a command.
+Positive
+: [`Command.Flags`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags) returns the [`FlagSet`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet) of a command.
  The `FlagSet` allows to setup the flags of a command.
 
- Positive
- : Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
- ```go
- var i = 42
- var x = &i // x is a pointer to i and has the type *int
- ```
+Positive
+: Some functions of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
+```go
+var i = 42
+var x = &i // x is a pointer to i and has the type *int
+```
 
 ## Ch.3: End
 
