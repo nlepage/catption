@@ -374,7 +374,7 @@ To add a shorthand to an int flag, use [`IntVarP`](https://pkg.go.dev/github.com
 ### What you'll learn
  - Discover `github.com/spf13/viper`
  - Read a config file
- - 🎁 ?
+ - 🎁 Access user's config dir
 
 ## Ch.4: Discover viper
 
@@ -398,6 +398,8 @@ It supports:
 
 ## Ch.4: Read config file
 
+## Ch.4: 🎁 Config dir
+
 ## Ch.4: End
 
 🎉 Congratulations! You have completed chapter 4.
@@ -405,7 +407,7 @@ It supports:
 ### What we've covered
  - Discover `github.com/spf13/viper`
  - Read a config file
- - 🎁 ?
+ - 🎁 Access user's config dir
 
 ## Ch.5: Introduction
 
