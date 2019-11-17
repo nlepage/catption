@@ -2,6 +2,7 @@ package catption
 
 import (
 	"image"
+	"math"
 
 	"github.com/Zenika/catption/font/impact"
 	"github.com/fogleman/gg"
@@ -11,6 +12,8 @@ const (
 	DefaultSize     = 1024
 	DefaultMargin   = 20
 	DefaultFontSize = 96
+
+	strokeSize = 6
 )
 
 type Catption struct {
@@ -71,17 +74,11 @@ func (c *Catption) Image() (image.Image, error) {
 
 func (c *Catption) drawText(ctx *gg.Context, text string, ax, ay float64) {
 	ctx.SetRGB(0, 0, 0)
-	n := 6 // "stroke" size
-	for dy := -n; dy <= n; dy++ {
-		for dx := -n; dx <= n; dx++ {
-			if dx*dx+dy*dy >= n*n {
-				// give it rounded corners
-				continue
-			}
-			x := ax + float64(dx)
-			y := ay + float64(dy)
-			ctx.DrawStringAnchored(text, x, y, 0.5, 0.5)
-		}
+	for r := 0.0; r < 2*math.Pi; r += .2 {
+		dx, dy := math.Sincos(r)
+		x := ax + dx*strokeSize
+		y := ay + dy*strokeSize
+		ctx.DrawStringAnchored(text, x, y, 0.5, 0.5)
 	}
 	ctx.SetRGB(1, 1, 1)
 	ctx.DrawStringAnchored(text, ax, ay, 0.5, 0.5)
