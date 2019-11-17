@@ -197,8 +197,6 @@ Positive
 
 ## Ch.2: Introduction
 
-Start using libraries 🐍
-
 ### What you'll learn
  - Discover `github/spf13/cobra`
  - Create a cobra command
@@ -294,13 +292,13 @@ You could implement your own command-line arguments validator (this is not the g
 
 ## Ch.3: Introduction
 
-Enough of hello messages, let's start writing our cat caption CLI 🐱
-
 ### What you'll learn
  - Interpret flags
  - 🎁 Flag shorthand
 
 ## Ch.3: Interpret flags
+
+Enough of hello messages, let's start writing our cat caption CLI 🐱
 
 In `📂catption/codelab/chapter3` you will find a `catption.go` with a new command:
 
@@ -379,6 +377,24 @@ To add a shorthand to an int flag, use [`IntVarP`](https://pkg.go.dev/github.com
  - 🎁 ?
 
 ## Ch.4: Discover viper
+
+> Viper is a complete configuration solution for Go applications including 12-Factor apps.
+> It is designed to work within an application, and can handle all types of configuration needs and formats.
+
+![Viper](codelab/assets/viper.png)
+
+It supports:
+
+* setting defaults
+* reading from JSON, TOML, YAML, HCL, envfile and Java properties config files
+* live watching and re-reading of config files (optional)
+* reading from environment variables
+* reading from remote config systems (etcd or Consul), and watching changes
+* reading from command line flags
+* reading from buffer
+* setting explicit values
+
+👀 Explore viper's [github page](https://github.com/spf13/viper) and [documentation](https://pkg.go.dev/github.com/spf13/viper?tab=doc).
 
 ## Ch.4: Read config file
 
