@@ -326,8 +326,11 @@ func sayHello(args []string) error {
 </ul>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.Flags" target="_blank"><code>Command.Flags</code></a> returns the <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet" target="_blank"><code>FlagSet</code></a> of a command.<br>The <code>FlagSet</code> allows to setup the flags of a command.</p>
 </aside>
-<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br><br><code>var i = 42<br>var x = &amp;i // x is a pointer to i and has the type *int<br></code></p>
+<aside class="special"><p>Some functions of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument:</p>
 </aside>
+<pre><code>var i = 42
+var x = &amp;i // x is a pointer to i and has the type *int
+</code></pre>
 
 
       </google-codelab-step>
