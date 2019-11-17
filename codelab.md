@@ -356,6 +356,7 @@ var i = 42
 var x = &i // x is a pointer to i and has the type *int
 ```
 
+
 ## Ch.3: End
 
 🎉 Congratulations! You have completed chapter 3.
