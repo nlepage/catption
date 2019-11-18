@@ -21,7 +21,7 @@ var (
 	out                    = "out.jpg"
 	dirs                   = []string{"."}
 
-	version = "chapter8"
+	version = "master"
 
 	logLevel = logrus.InfoLevel
 
