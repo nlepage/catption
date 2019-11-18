@@ -542,7 +542,13 @@ Positive
 
 ## Ch.6: 🎁 Compile vars
 
-TODO to set value of Version
+Using a constant value fo `cmd`'s `Version` field is not very useful.
+
+It would be nice to set this variable at compile time, with a git tag or commit hash.
+
+⌨ Create a `version` variable at package level, and set `cmd.Version`'s value with this variable.
+
+⌨ Try changing the binary's version with build flags: `go build -ldflags "-X main.version=1.0.0"`
 
 ## Ch.6: End
 
