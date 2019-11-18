@@ -355,9 +355,9 @@ Positive
 : Some methods of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
 Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
 
-⌨ Play around with your new command, some pictures are available in the `📂cats/`
+⌨ Play around with your new command, some pictures are available in `📂cats/`
 
-## Ch.3 Flag shorthand
+## Ch.3 Flags shorthand
 
 Flag shorthands allow users to type more concise commands.
 
