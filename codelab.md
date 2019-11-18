@@ -527,7 +527,18 @@ The easiest way for him/her to specify the input files directories is to use an 
 
 ## Ch.6: Subcommands
 
-TODO for writing to config file
+Some of our users don't know how to create a config file and add directories to it.
+
+Let's help them by adding a new `dir` subcommand to catption, which will add a directory to the config file.
+
+In `📂catption/codelab/chapter6` we now have a `dirCmd` command, and a `addDir` function which implements adding a new directory to the config file.
+
+⌨ Fill the fields of `dirCmd`: `Use`, `Long`, `Args` and `RunE`
+
+⌨ In the `init` function, add `dirCmd` as a subcommand to `cmd`
+
+Positive
+: [`Command.AddComand`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.AddCommand) adds a subcommand to a parent command
 
 ## Ch.6: 🎁 Compile vars
 

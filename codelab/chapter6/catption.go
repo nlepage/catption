@@ -21,7 +21,7 @@ var (
 		Use:     "catption",
 		Long:    "Cat caption generator CLI",
 		Args:    cobra.ExactArgs(1),
-		Version: "chapter5",
+		Version: "chapter6",
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			viper.SetConfigName("catption")
 			viper.AddConfigPath(".")

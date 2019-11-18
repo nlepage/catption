@@ -504,7 +504,13 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.6: Subcommands" duration="0">
-        <p>TODO for writing to config file</p>
+        <p>Some of our users don&#39;t know how to create a config file and add directories to it.</p>
+<p>Let&#39;s help them by adding a new <code>dir</code> subcommand to catption, which will add a directory to the config file.</p>
+<p>In <code>📂catption/codelab/chapter6</code> we now have a <code>dirCmd</code> command, and a <code>addDir</code> function which implements adding a new directory to the config file.</p>
+<p>⌨ Fill the fields of <code>dirCmd</code>: <code>Use</code>, <code>Long</code>, <code>Args</code> and <code>RunE</code></p>
+<p>⌨ In the <code>init</code> function, add <code>dirCmd</code> as a subcommand to <code>cmd</code></p>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.AddCommand" target="_blank"><code>Command.AddComand</code></a> adds a subcommand to a parent command</p>
+</aside>
 
 
       </google-codelab-step>
