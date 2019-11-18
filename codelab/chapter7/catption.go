@@ -5,8 +5,11 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/spf13/pflag"
+
 	catption "github.com/Zenika/catption/lib"
 
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -19,11 +22,15 @@ var (
 
 	version = "chapter7"
 
+	logLevel = logrus.InfoLevel
+
 	cmd = &cobra.Command{
 		Use:  "catption",
 		Long: "Cat caption generator CLI",
 		Args: cobra.ExactArgs(1),
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
+			logrus.SetLevel(logLevel)
+
 			viper.SetConfigName("catption")
 			viper.AddConfigPath(".")
 			if configDir, err := os.UserConfigDir(); err == nil {
@@ -90,6 +97,8 @@ func init() {
 	cmd.Flags().StringSlice("dir", nil, "Input files directory")
 	viper.BindPFlag("dirs", cmd.Flags().Lookup("dir"))
 
+	// FIXME add a logLevel flag
+
 	cmd.AddCommand(dirCmd)
 }
 
@@ -140,4 +149,25 @@ func resolveName(name string) (string, error) {
 	}
 
 	return "", fmt.Errorf("%v not found (dirs=%v)", name, dirs)
+}
+
+type logLevelValue logrus.Level
+
+var _ pflag.Value = new(logLevelValue)
+
+func (l *logLevelValue) Set(value string) error {
+	lvl, err := logrus.ParseLevel(value)
+	if err != nil {
+		return err
+	}
+	*l = logLevelValue(lvl)
+	return nil
+}
+
+func (l *logLevelValue) String() string {
+	return l.String()
+}
+
+func (l *logLevelValue) Type() string {
+	return "string"
 }
