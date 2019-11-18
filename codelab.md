@@ -359,7 +359,7 @@ Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
 
 ## Ch.3 Flags shorthand
 
-Flag shorthands allow users to type more concise commands.
+Flags shorthands allow users to type more concise commands.
 
 ⌨ Add some shorthands to `cmd`:
  - `-t` for `--top`
@@ -443,7 +443,7 @@ Positive
 
 Positive
 : viper has all kinds of getters for reading config keys.
-[`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into an slice of ints (`[]int`).
+[`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into a slice of ints (`[]int`).
 
 ### Create a config file
 
