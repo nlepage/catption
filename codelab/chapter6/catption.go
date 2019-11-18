@@ -17,12 +17,11 @@ var (
 	out                    = "out.jpg"
 	dirs                   = []string{"."}
 
-	version = "chapter6"
-
 	cmd = &cobra.Command{
-		Use:  "catption",
-		Long: "Cat caption generator CLI",
-		Args: cobra.ExactArgs(1),
+		Use:     "catption",
+		Long:    "Cat caption generator CLI",
+		Args:    cobra.ExactArgs(1),
+		Version: "chapter6",
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			viper.SetConfigName("catption")
 			viper.AddConfigPath(".")
@@ -71,8 +70,6 @@ var (
 )
 
 func init() {
-	cmd.Version = version
-
 	cmd.Flags().StringVarP(&top, "top", "t", "", "Top text")
 	cmd.Flags().StringVarP(&bottom, "bottom", "b", "", "Bottom text")
 
