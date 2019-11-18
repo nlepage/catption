@@ -430,16 +430,22 @@ PreRunE: func(_ *cobra.Command, args []string) error {
 
 This function tries to load a `catption.*` config file in the current directory.
 
+### Define default config values
+
 ⌨ Before the call to `ReadInConfig`, define the default value for the `"dirs"` config key (use the value of the `dirs` var).
 
 Positive
 : [`viper.SetDefault`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#SetDefault) allows to define default values for config keys.
+
+### Read config values
 
 ⌨ After the call to `ReadInConfig`, set the value of the `dirs` var using the `"dirs"` config key.
 
 Positive
 : viper has all kinds of getters for reading config keys.
 [`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into an slice of ints (`[]int`).
+
+### Create a config file
 
 ⌨ Create a `catption.*` config file with the directories where you want catption to look for JPEG files.
 
