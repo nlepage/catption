@@ -461,7 +461,7 @@ dirs:
 
 Many applications read there config file from the user's config directory (`$HOME/Library/Application Support` on macOS for example).
 
-⌨ Use [`viper.AddConfigPath`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#AddConfigPath) to read catption's config file from the user's config directory in addition of current directory.
+⌨ Call [`viper.AddConfigPath`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#AddConfigPath) a second time to read catption's config file from the user's config directory, in addition of current the directory.
 
 Positive
 : Package `os` has some useful helpers such [`UserHomeDir`](https://pkg.go.dev/os?tab=doc#UserHomeDir) to read platform dependent environment variables.

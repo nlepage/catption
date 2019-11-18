@@ -429,7 +429,7 @@ func sayHello(args []string) error {
     
       <google-codelab-step label="Ch.4: 🎁 Config dir" duration="0">
         <p>Many applications read there config file from the user&#39;s config directory (<code>$HOME/Library/Application Support</code> on macOS for example).</p>
-<p>⌨ Use <a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#AddConfigPath" target="_blank"><code>viper.AddConfigPath</code></a> to read catption&#39;s config file from the user&#39;s config directory in addition of current directory.</p>
+<p>⌨ Call <a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#AddConfigPath" target="_blank"><code>viper.AddConfigPath</code></a> a second time to read catption&#39;s config file from the user&#39;s config directory, in addition of current the directory.</p>
 <aside class="special"><p>Package <code>os</code> has some useful helpers such <a href="https://pkg.go.dev/os?tab=doc#UserHomeDir" target="_blank"><code>UserHomeDir</code></a> to read platform dependent environment variables.</p>
 </aside>
 
