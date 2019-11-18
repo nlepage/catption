@@ -224,7 +224,6 @@ import (
 )
 
 var cmd = &amp;cobra.Command{
-	// FIXME fill Use and Long fields
 	RunE: func(_ *cobra.Command, args []string) error {
 		return nil
 	},
@@ -321,6 +320,7 @@ func sayHello(args []string) error {
 <li>Write the catption to <code>out.jpg</code></li>
 </ol>
 <p>However the variables used to setup the catption have not been initialized.</p>
+<h2 is-upgraded>Define flags</h2>
 <p>⌨ In the <code>init</code> function, setup <code>cmd</code>&#39;s flags:</p>
 <ul>
 <li><code>top</code> and <code>bottom</code> string flags</li>
@@ -330,6 +330,7 @@ func sayHello(args []string) error {
 </aside>
 <aside class="special"><p>Some methods of <code>FlagSet</code>, such as <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar" target="_blank"><code>IntVar</code></a>, expect a pointer as first argument.<br>Having <code>var i = 42</code>, use <code>&amp;i</code> to get a pointer to <code>i</code>, <code>&amp;i</code> has the type <code>*int</code>.</p>
 </aside>
+<p>⌨ Play around with your new command, some pictures are available in the <code>📂cats/</code></p>
 
 
       </google-codelab-step>

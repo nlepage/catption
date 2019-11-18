@@ -242,7 +242,6 @@ import (
 )
 
 var cmd = &cobra.Command{
-	// FIXME fill Use and Long fields
 	RunE: func(_ *cobra.Command, args []string) error {
 		return nil
 	},
@@ -342,6 +341,8 @@ This command does 3 things:
 
 However the variables used to setup the catption have not been initialized.
 
+### Define flags
+
 ⌨ In the `init` function, setup `cmd`'s flags:
  - `top` and `bottom` string flags
  - `size`, `fontSize` and `margin` float flags (Use `catption.DefaultSize`, `catption.DefaultFontSize` and `catption.DefaultMargin` as default values)
@@ -353,6 +354,8 @@ Positive
 Positive
 : Some methods of `FlagSet`, such as [`IntVar`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#IntVar), expect a pointer as first argument.
 Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
+
+⌨ Play around with your new command, some pictures are available in the `📂cats/`
 
 ## Ch.3 Flag shorthand
 
