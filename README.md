@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-go get github.com/Zenika/catption
+go get github.com/Zenika/catption/cmd/catption
 ```
 
 ## Usage

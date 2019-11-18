@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/Zenika/catption/codelab/chapter3/catption"
+	catption "github.com/Zenika/catption/codelab/chapter3/catption/lib"
 
 	"github.com/spf13/cobra"
 )
