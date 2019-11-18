@@ -262,12 +262,18 @@ func sayHello(args []string) error {
 }
 ```
 
+### Describe the command
+
 ⌨ Fill the `Use` and `Long` fields of the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
 
-⌨ Call `sayHello` in the `RunE` function of `cmd`, in order to have a working hello command.
+### Implement the command
+
+⌨ Call `sayHello` in the `RunE` function of `cmd` in order to have a working hello command, execute `go run . cobra` to see the result.
 
 Negative
 : `sayHello` may return an error, you may forward this error to the caller of `RunE`.
+
+### Version the command
 
 ⌨ Finally fill the `Version` field of `cmd`, then execute `go run .` to see the result.
 
@@ -430,7 +436,7 @@ Positive
 
 Positive
 : viper has all kinds of getters for reading config keys.
-[`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into an ints slice (`[]int`).
+[`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into an slice of ints (`[]int`).
 
 ⌨ Create a `catption.*` config file with the directories where you want catption to look for JPEG files.
 

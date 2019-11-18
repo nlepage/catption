@@ -243,10 +243,13 @@ func sayHello(args []string) error {
 	return nil
 }
 </code></pre>
+<h2 is-upgraded>Describe the command</h2>
 <p>⌨ Fill the <code>Use</code> and <code>Long</code> fields of the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run .</code> to see the result.</p>
-<p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code>, in order to have a working hello command.</p>
+<h2 is-upgraded>Implement the command</h2>
+<p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code> in order to have a working hello command, execute <code>go run . cobra</code> to see the result.</p>
 <aside class="warning"><p><code>sayHello</code> may return an error, you may forward this error to the caller of <code>RunE</code>.</p>
 </aside>
+<h2 is-upgraded>Version the command</h2>
 <p>⌨ Finally fill the <code>Version</code> field of <code>cmd</code>, then execute <code>go run .</code> to see the result.</p>
 
 
@@ -408,7 +411,7 @@ func sayHello(args []string) error {
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#SetDefault" target="_blank"><code>viper.SetDefault</code></a> allows to define default values for config keys.</p>
 </aside>
 <p>⌨ After the call to <code>ReadInConfig</code>, set the value of the <code>dirs</code> var using the <code>&#34;dirs&#34;</code> config key.</p>
-<aside class="special"><p>viper has all kinds of getters for reading config keys.<br><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice" target="_blank"><code>viper.GetIntSlice</code></a> reads a config key into an ints slice (<code>[]int</code>).</p>
+<aside class="special"><p>viper has all kinds of getters for reading config keys.<br><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice" target="_blank"><code>viper.GetIntSlice</code></a> reads a config key into an slice of ints (<code>[]int</code>).</p>
 </aside>
 <p>⌨ Create a <code>catption.*</code> config file with the directories where you want catption to look for JPEG files.</p>
 <p>Example <code>catption.yaml</code>:</p>
