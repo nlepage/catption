@@ -1,2 +1,4 @@
 /chapter4
 /*.jpg
+/catption.*
+!/catption.go

@@ -8,19 +8,36 @@ import (
 	"github.com/Zenika/catption/codelab/chapter3/catption"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var (
 	top, bottom            string
 	size, fontSize, margin float64
 	out                    = "out.jpg"
-	dirs                   = []string{".", "../../cats"}
+	dirs                   = []string{"."}
 
 	cmd = &cobra.Command{
 		Use:     "catption",
 		Long:    "Cat caption generator CLI",
 		Args:    cobra.ExactArgs(1),
 		Version: "chapter4",
+		PreRunE: func(_ *cobra.Command, args []string) error {
+			viper.SetConfigName("catption")
+			viper.AddConfigPath(".")
+
+			// FIXME set viper's default value for key "dirs" (use dirs variable value)
+
+			if err := viper.ReadInConfig(); err != nil {
+				if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+					return err
+				}
+			}
+
+			// FIXME read viper's "dirs" key into the dirs variable
+
+			return nil
+		},
 		RunE: func(_ *cobra.Command, args []string) error {
 			var name = args[0]
 
@@ -78,5 +95,5 @@ func resolveName(name string) (string, error) {
 		return path, nil
 	}
 
-	return "", fmt.Errorf("Did not found %v (dirs=%v)", name, dirs)
+	return "", fmt.Errorf("%v not found (dirs=%v)", name, dirs)
 }
