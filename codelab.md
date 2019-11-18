@@ -414,7 +414,7 @@ Let's use a config file to define directories where catption should look for JPE
 In `📂catption/codelab/chapter4` the catption command now has a `PreRunE` function:
 
 ```go
-PreRunE: func(_ *cobra.Command, args []string) error {
+PreRunE: func(_ *cobra.Command, _ []string) error {
 	viper.SetConfigName("catption")
 	viper.AddConfigPath(".")
 
@@ -483,7 +483,33 @@ Positive
 
 ## Ch.5: cobra 🔌 viper
 
+Some of our users don't want to use config files.
+
+We would like to offer them the possibility to override the `dirs` config key with a flag.
+
+Luckily viper has the ability to read config values from cobra!
+
+Negative
+: When connecting cobra and viper, you must read config values from viper.
+viper reads values from cobra, but not the other way around.
+
+⌨ Create a new `dir` flag with the type slice of strings.
+
+⌨ Bind the `dir` flag to viper's `dirs` config key.
+
+Positive
+: [`FlagSet.Lookup`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.Lookup) returns the `*pflag.Flag` for a previously created flag's name.
+
+Positive
+: [`viper.BindPFlag`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#BindPFlag) binds a config key to a `*pflag.Flag`.
+
 ## Ch.5: 🎁 Read env vars
+
+One of our users would like to deploy catption on a kubernetes cluster.
+
+The easiest way for him/her to specify the input files directories is to use an environment variable.
+
+⌨ Use viper's API to read the `dirs` config key from a `CATPTION_DIRS` environment variable.
 
 ## Ch.5: End
 

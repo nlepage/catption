@@ -22,7 +22,7 @@ var (
 		Long:    "Cat caption generator CLI",
 		Args:    cobra.ExactArgs(1),
 		Version: "chapter4",
-		PreRunE: func(_ *cobra.Command, args []string) error {
+		PreRunE: func(_ *cobra.Command, _ []string) error {
 			viper.SetConfigName("catption")
 			viper.AddConfigPath(".")
 
@@ -64,7 +64,7 @@ func init() {
 	cmd.Flags().StringVarP(&bottom, "bottom", "b", "", "Bottom text")
 
 	cmd.Flags().Float64VarP(&size, "size", "s", catption.DefaultSize, "Output image size")
-	cmd.Flags().Float64Var(&fontSize, "fontSize", catption.DefaultFontSize, "Font  (points)")
+	cmd.Flags().Float64Var(&fontSize, "fontSize", catption.DefaultFontSize, "Font in points")
 	cmd.Flags().Float64Var(&margin, "margin", catption.DefaultMargin, "Top/bottom text margin")
 
 	cmd.Flags().StringVarP(&out, "out", "o", out, "Output file")

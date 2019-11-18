@@ -394,7 +394,7 @@ func sayHello(args []string) error {
         <p>Specifying the full path to the input JPEG file is not very userfriendly...</p>
 <p>Let&#39;s use a config file to define directories where catption should look for JPEG files.</p>
 <p>In <code>📂catption/codelab/chapter4</code> the catption command now has a <code>PreRunE</code> function:</p>
-<pre><code>PreRunE: func(_ *cobra.Command, args []string) error {
+<pre><code>PreRunE: func(_ *cobra.Command, _ []string) error {
 	viper.SetConfigName(&#34;catption&#34;)
 	viper.AddConfigPath(&#34;.&#34;)
 
@@ -459,12 +459,26 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.5: cobra 🔌 viper" duration="0">
-        
+        <p>Some of our users don&#39;t want to use config files.</p>
+<p>We would like to offer them the possibility to override the <code>dirs</code> config key with a flag.</p>
+<p>Luckily viper has the ability to read config values from cobra!</p>
+<aside class="warning"><p>When connecting cobra and viper, you must read config values from viper.<br>viper reads values from cobra, but not the other way around.</p>
+</aside>
+<p>⌨ Create a new <code>dir</code> flag with the type slice of strings.</p>
+<p>⌨ Bind the <code>dir</code> flag to viper&#39;s <code>dirs</code> config key.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.Lookup" target="_blank"><code>FlagSet.Lookup</code></a> returns the <code>*pflag.Flag</code> for a previously created flag&#39;s name.</p>
+</aside>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#BindPFlag" target="_blank"><code>viper.BindPFlag</code></a> binds a config key to a <code>*pflag.Flag</code>.</p>
+</aside>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.5: 🎁 Read env vars" duration="0">
-        
+        <p>One of our users would like to deploy catption on a kubernetes cluster.</p>
+<p>The easiest way for him/her to specify the input files directories is to use an environment variable.</p>
+<p>⌨ Use viper&#39;s API to read the <code>dirs</code> config key from a <code>CATPTION_DIRS</code> environment variable.</p>
+
 
       </google-codelab-step>
     
@@ -483,7 +497,6 @@ func sayHello(args []string) error {
         <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
 <li>Create a subcommand</li>
-<li>Write a config file</li>
 <li>🎁 Inject compile time variables</li>
 </ul>
 
@@ -491,17 +504,14 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.6: Subcommands" duration="0">
-        
+        <p>TODO for writing to config file</p>
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Ch.6: Write config file" duration="0">
-        
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.6: 🎁 Compile vars" duration="0">
-        
+        <p>TODO to set value of Version</p>
+
 
       </google-codelab-step>
     
@@ -510,7 +520,6 @@ func sayHello(args []string) error {
 <h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
 <ul class="checklist">
 <li>Create a subcommand</li>
-<li>Write a config file</li>
 <li>🎁 Inject compile time variables</li>
 </ul>
 
@@ -528,12 +537,14 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.7: Custom flags" duration="0">
-        
+        <p>TODO parse logrus&#39;s log level</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.7: 🎁 Discover logrus" duration="0">
-        
+        <p>TODO add some logs</p>
+
 
       </google-codelab-step>
     
@@ -560,17 +571,20 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: Discover os/exec" duration="0">
-        
+        <p>TODO run xdg-open or other...</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: Conditional compile" duration="0">
-        
+        <p>TODO create _linux.go...</p>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: 🎁 Build tags" duration="0">
-        
+        <p>TODO use build tags to match more than linux...</p>
+
 
       </google-codelab-step>
     
