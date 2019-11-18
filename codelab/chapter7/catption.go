@@ -46,6 +46,8 @@ var (
 				if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
 					return err
 				}
+			} else {
+				logrus.Debugf("Using config file %s", viper.ConfigFileUsed())
 			}
 
 			dirs = viper.GetStringSlice("dirs")
@@ -59,6 +61,7 @@ var (
 			if err != nil {
 				return err
 			}
+			logrus.Infof("Found input file %s", path)
 
 			cat, err := catption.LoadJPG(path)
 			if err != nil {
