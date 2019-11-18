@@ -509,6 +509,8 @@ func sayHello(args []string) error {
 <p>In <code>📂catption/codelab/chapter6</code> we now have a <code>dirCmd</code> command, and a <code>addDir</code> function which implements adding a new directory to the config file.</p>
 <p>⌨ Fill the fields of <code>dirCmd</code>: <code>Use</code>, <code>Long</code>, <code>Args</code> and <code>RunE</code></p>
 <p>⌨ In the <code>init</code> function, add <code>dirCmd</code> as a subcommand to <code>cmd</code></p>
+<aside class="special"><p><code>cmd</code>&#39;s <code>RunE</code> function is now a <code>PersistentPreRunE</code>.<br>It will be executed for <code>cmd</code> and it&#39;s subcommands.</p>
+</aside>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.AddCommand" target="_blank"><code>Command.AddComand</code></a> adds a subcommand to a parent command</p>
 </aside>
 

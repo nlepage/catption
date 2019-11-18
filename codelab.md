@@ -538,6 +538,10 @@ In `📂catption/codelab/chapter6` we now have a `dirCmd` command, and a `addDir
 ⌨ In the `init` function, add `dirCmd` as a subcommand to `cmd`
 
 Positive
+: `cmd`'s `RunE` function is now a `PersistentPreRunE`.
+It will be executed for `cmd` and it's subcommands.
+
+Positive
 : [`Command.AddComand`](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command.AddCommand) adds a subcommand to a parent command
 
 ## Ch.6: 🎁 Compile vars
