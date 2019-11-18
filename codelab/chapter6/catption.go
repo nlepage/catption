@@ -22,7 +22,7 @@ var (
 		Long:    "Cat caption generator CLI",
 		Args:    cobra.ExactArgs(1),
 		Version: "chapter5",
-		PreRunE: func(_ *cobra.Command, _ []string) error {
+		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			viper.SetConfigName("catption")
 			viper.AddConfigPath(".")
 			if configDir, err := os.UserConfigDir(); err == nil {
@@ -63,6 +63,10 @@ var (
 			return cat.SaveJPG(out)
 		},
 	}
+
+	dirCmd = &cobra.Command{
+		// FIXME Set the following fields: Use, Long, Args and RunE
+	}
 )
 
 func init() {
@@ -77,12 +81,20 @@ func init() {
 
 	cmd.Flags().StringSlice("dir", nil, "Input files directory")
 	viper.BindPFlag("dirs", cmd.Flags().Lookup("dir"))
+
+	// FIXME add dirCmd to cmd's subcommands
 }
 
 func main() {
 	if err := cmd.Execute(); err != nil {
 		os.Exit(1)
 	}
+}
+
+func addDir(dir string) error {
+	viper.Set("dirs", append(viper.GetStringSlice("dirs"), dir))
+
+	return viper.WriteConfig()
 }
 
 func resolveName(name string) (string, error) {
