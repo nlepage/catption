@@ -459,6 +459,13 @@ dirs:
 
 ## Ch.4: 🎁 Config dir
 
+Many applications read there config file from the user's config directory (`$HOME/Library/Application Support` on macOS for example).
+
+⌨ Use [`viper.AddConfigPath`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#AddConfigPath) to read catption's config file from the user's config directory in addition of current directory.
+
+Positive
+: Package `os` has some useful helpers such [`UserHomeDir`](https://pkg.go.dev/os?tab=doc#UserHomeDir) to read platform dependent environment variables.
+
 ## Ch.4: End
 
 🎉 Congratulations! You have completed chapter 4.
