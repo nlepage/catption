@@ -65,6 +65,15 @@ Follow the instructions at [https://golang.org/doc/install#tarball](https://gola
 
 ### 🍏 Mac OS
 
+#### brew
+
+Run: 
+```sh
+brew install go
+```
+
+#### tarbal
+
 Download the package file at [https://golang.org/dl/](https://golang.org/dl/), open it, and follow the prompts.
 
 ### 🏁 Windows
