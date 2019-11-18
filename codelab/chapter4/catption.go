@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/Zenika/catption/codelab/chapter3/catption"
 
@@ -12,6 +14,7 @@ var (
 	top, bottom            string
 	size, fontSize, margin float64
 	out                    = "out.jpg"
+	dirs                   = []string{".", "../../cats"}
 
 	cmd = &cobra.Command{
 		Use:     "catption",
@@ -21,7 +24,12 @@ var (
 		RunE: func(_ *cobra.Command, args []string) error {
 			var name = args[0]
 
-			cat, err := catption.LoadJPG(name)
+			path, err := resolveName(name)
+			if err != nil {
+				return err
+			}
+
+			cat, err := catption.LoadJPG(path)
 			if err != nil {
 				return err
 			}
@@ -49,4 +57,26 @@ func main() {
 	if err := cmd.Execute(); err != nil {
 		os.Exit(1)
 	}
+}
+
+func resolveName(name string) (string, error) {
+	for _, dir := range dirs {
+		path := filepath.Join(dir, name)
+
+		stat, err := os.Stat(path)
+		if err != nil {
+			if os.IsNotExist(err) {
+				continue
+			}
+			return "", err
+		}
+
+		if stat.IsDir() {
+			return "", fmt.Errorf("%v is a directory", path)
+		}
+
+		return path, nil
+	}
+
+	return "", fmt.Errorf("Did not found %v (dirs=%v)", name, dirs)
 }
