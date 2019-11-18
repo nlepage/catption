@@ -497,14 +497,15 @@ Positive
 
 ### What you'll learn
  - Create a subcommand
- - Write a config file
  - 🎁 Inject compile time variables
 
 ## Ch.6: Subcommands
 
-## Ch.6: Write config file
+TODO for writing to config file
 
 ## Ch.6: 🎁 Compile vars
+
+TODO to set value of Version
 
 ## Ch.6: End
 
@@ -512,7 +513,6 @@ Positive
 
 ### What we've covered
  - Create a subcommand
- - Write a config file
  - 🎁 Inject compile time variables
 
 ## Ch.7: Introduction
@@ -523,7 +523,11 @@ Positive
 
 ## Ch.7: Custom flags
 
+TODO parse logrus's log level
+
 ## Ch.7: 🎁 Discover logrus
+
+TODO add some logs
 
 ## Ch.7: End
 
@@ -542,9 +546,15 @@ Positive
 
 ## Ch.8: Discover os/exec
 
+TODO run xdg-open or other... 
+
 ## Ch.8: Conditional compile
 
+TODO create _linux.go...
+
 ## Ch.8: 🎁 Build tags
+
+TODO use build tags to match more than linux...
 
 ## Ch.8: End
 
