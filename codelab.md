@@ -398,6 +398,50 @@ It supports:
 
 ## Ch.4: Read config file
 
+Specifying the full path to the input JPEG file is not very userfriendly...
+
+Let's use a config file to define directories where catption should look for JPEG files.
+
+In `📂catption/codelab/chapter4` the catption command now has a `PreRunE` function:
+
+```go
+PreRunE: func(_ *cobra.Command, args []string) error {
+	viper.SetConfigName("catption")
+	viper.AddConfigPath(".")
+
+	if err := viper.ReadInConfig(); err != nil {
+		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+			return err
+		}
+	}
+
+	return nil
+},
+```
+
+This function tries to load a `catption.*` config file in the current directory.
+
+⌨ Before the call to `ReadInConfig`, define the default value for the `"dirs"` config key (use the value of the `dirs` var).
+
+Positive
+: [`viper.SetDefault`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#SetDefault) allows to define default values for config keys.
+
+⌨ After the call to `ReadInConfig`, set the value of the `dirs` var using the `"dirs"` config key.
+
+Positive
+: viper has all kinds of getters for reading config keys.
+[`viper.GetIntSlice`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice) reads a config key into an ints slice (`[]int`).
+
+⌨ Create a `catption.*` config file with the directories where you want catption to look for JPEG files.
+
+Example `catption.yaml`:
+
+```yaml
+dirs:
+  - "."
+  - "../../cats"
+```
+
 ## Ch.4: 🎁 Config dir
 
 ## Ch.4: End

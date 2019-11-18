@@ -387,7 +387,36 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.4: Read config file" duration="0">
-        
+        <p>Specifying the full path to the input JPEG file is not very userfriendly...</p>
+<p>Let&#39;s use a config file to define directories where catption should look for JPEG files.</p>
+<p>In <code>📂catption/codelab/chapter4</code> the catption command now has a <code>PreRunE</code> function:</p>
+<pre><code>PreRunE: func(_ *cobra.Command, args []string) error {
+	viper.SetConfigName(&#34;catption&#34;)
+	viper.AddConfigPath(&#34;.&#34;)
+
+	if err := viper.ReadInConfig(); err != nil {
+		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+			return err
+		}
+	}
+
+	return nil
+},
+</code></pre>
+<p>This function tries to load a <code>catption.*</code> config file in the current directory.</p>
+<p>⌨ Before the call to <code>ReadInConfig</code>, define the default value for the <code>&#34;dirs&#34;</code> config key (use the value of the <code>dirs</code> var).</p>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#SetDefault" target="_blank"><code>viper.SetDefault</code></a> allows to define default values for config keys.</p>
+</aside>
+<p>⌨ After the call to <code>ReadInConfig</code>, set the value of the <code>dirs</code> var using the <code>&#34;dirs&#34;</code> config key.</p>
+<aside class="special"><p>viper has all kinds of getters for reading config keys.<br><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#GetIntSlice" target="_blank"><code>viper.GetIntSlice</code></a> reads a config key into an ints slice (<code>[]int</code>).</p>
+</aside>
+<p>⌨ Create a <code>catption.*</code> config file with the directories where you want catption to look for JPEG files.</p>
+<p>Example <code>catption.yaml</code>:</p>
+<pre><code>dirs:
+  - &#34;.&#34;
+  - &#34;../../cats&#34;
+</code></pre>
+
 
       </google-codelab-step>
     
