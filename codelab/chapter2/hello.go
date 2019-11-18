@@ -11,6 +11,7 @@ import (
 var cmd = &cobra.Command{
 	// FIXME fill Use and Long fields
 	RunE: func(_ *cobra.Command, args []string) error {
+		// FIXME call sayHello
 		return nil
 	},
 }
