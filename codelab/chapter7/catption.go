@@ -168,7 +168,7 @@ func (l *logLevelValue) Set(value string) error {
 }
 
 func (l *logLevelValue) String() string {
-	return l.String()
+	return logrus.Level(*l).String()
 }
 
 func (l *logLevelValue) Type() string {

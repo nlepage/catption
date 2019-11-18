@@ -71,7 +71,13 @@ var (
 			cat.Top, cat.Bottom = top, bottom
 			cat.Size, cat.FontSize, cat.Margin = size, fontSize, margin
 
-			return cat.SaveJPG(out)
+			if err := cat.SaveJPG(out); err != nil {
+				return err
+			}
+
+			// FIXME use os/exec.Command to open an image viewer
+
+			return nil
 		},
 	}
 
@@ -168,7 +174,7 @@ func (l *logLevelValue) Set(value string) error {
 }
 
 func (l *logLevelValue) String() string {
-	return l.String()
+	return logrus.Level(*l).String()
 }
 
 func (l *logLevelValue) Type() string {
