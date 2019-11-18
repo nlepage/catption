@@ -94,7 +94,22 @@ func main() {
 func addDir(dir string) error {
 	viper.Set("dirs", append(viper.GetStringSlice("dirs"), dir))
 
-	return viper.WriteConfig()
+	if err := viper.WriteConfig(); err != nil {
+		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+			return err
+		}
+
+		viper.Set("dirs", []string{dir})
+
+		configDir, err := os.UserConfigDir()
+		if err != nil {
+			return err
+		}
+
+		return viper.WriteConfigAs(filepath.Join(configDir, "catption.json"))
+	}
+
+	return nil
 }
 
 func resolveName(name string) (string, error) {
