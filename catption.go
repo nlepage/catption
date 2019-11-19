@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strings"
 
 	"github.com/spf13/pflag"
 
@@ -120,8 +119,10 @@ func main() {
 func addDir(dir string) error {
 	var dirs = viper.GetStringSlice("dirs")
 
-	if strings.Contains(strings.Join(dirs, ":"), dir) {
-		return nil
+	for _, d := range dirs {
+		if d == dir {
+			return nil
+		}
 	}
 
 	viper.Set("dirs", append(dirs, dir))
