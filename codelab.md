@@ -735,4 +735,4 @@ You now know the basics to build you own CLI with Go.
  - Use build time variable injection
  - Use conditional compilation and build tags
 
-The full working catption CLI source is available at the repositories root.
+The fully working catption CLI source is available at the repositories root.
