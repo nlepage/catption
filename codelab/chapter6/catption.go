@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	catption "github.com/Zenika/catption/lib"
 
@@ -92,7 +93,13 @@ func main() {
 }
 
 func addDir(dir string) error {
-	viper.Set("dirs", append(viper.GetStringSlice("dirs"), dir))
+	var dirs = viper.GetStringSlice("dirs")
+
+	if strings.Contains(strings.Join(dirs, ":"), dir) {
+		return nil
+	}
+
+	viper.Set("dirs", append(dirs, dir))
 
 	if err := viper.WriteConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
