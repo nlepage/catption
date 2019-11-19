@@ -2,7 +2,7 @@ summary: Basics of writing a Go CLI tool
 id: codelab
 categories: golang
 tags: cli
-status: Published 
+status: Published
 authors: Nicolas Lepage
 feedback link: https://github.com/Zenika/catption/issues
 
@@ -139,7 +139,7 @@ func main() {
 }
 ```
 
-⌨ Execute this program by running `go run .`.
+⌨ Execute this program by running `go run hello.go`.
 
 ### Format the message
 
@@ -187,13 +187,16 @@ $ hello -u capslock
 HELLO CAPSLOCK!
 ```
 
-⌨ Explore the `flag` package and parse the `-u` flag in `hello.go`.
+⌨ Explore the `flag` [package](https://pkg.go.dev/flag) and parse the `-u` flag in `hello.go`.
 
 Positive
 : [`flag.Args`](https://pkg.go.dev/flag?tab=doc#Args) returns the non-flag command-line arguments.
 
 Positive
 : [`strings.ToUpper`](https://pkg.go.dev/strings?tab=doc#ToUpper) returns an upper case copy of a string.
+
+Positive
+: [`fmt.Sprintf](https://pkg.go.dev/fmt?tab=doc#Sprintf) returns a formated string
 
 ## Ch.1: End
 
@@ -272,18 +275,18 @@ func sayHello(args []string) error {
 
 ### Describe the command
 
-⌨ Fill the `Use` and `Long` fields of the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run .` to see the result.
+⌨ Fill the `Use` and `Long` fields of the `cmd` [Command struct](https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command), then execute `go run hello.go -h` to see the result.
 
 ### Implement the command
 
-⌨ Call `sayHello` in the `RunE` function of `cmd` in order to have a working hello command, execute `go run . cobra` to see the result.
+⌨ Call `sayHello` in the `RunE` function of `cmd` in order to have a working hello command, execute `go run hello.go cobra` to see the result.
 
 Negative
 : `sayHello` may return an error, you may forward this error to the caller of `RunE`.
 
 ### Version the command
 
-⌨ Finally fill the `Version` field of `cmd`, then execute `go run .` to see the result.
+⌨ Finally fill the `Version` field of `cmd`, then execute `go run hello-go --version` to see the result.
 
 ## Ch.2: 🎁 Validate args
 
@@ -466,6 +469,8 @@ dirs:
   - "../../cats"
 ```
 
+You can now try your configuration: `go run catption.go -t "Hello" -b "World" dinner.jpg`
+
 ## Ch.4: 🎁 Config dir
 
 Many applications read there config file from the user's config directory (`$HOME/Library/Application Support` on macOS for example).
@@ -512,6 +517,8 @@ Positive
 Positive
 : [`viper.BindPFlag`](https://pkg.go.dev/github.com/spf13/viper?tab=doc#BindPFlag) binds a config key to a `*pflag.Flag`.
 
+Try it out: `go run catption.go -t "Hello" -b "World" --dir "../../cats" --dir "." dinner.jpg`
+
 ## Ch.5: 🎁 Read env vars
 
 One of our users would like to deploy catption on a kubernetes cluster.
@@ -519,6 +526,8 @@ One of our users would like to deploy catption on a kubernetes cluster.
 The easiest way for him/her to specify the input files directories is to use an environment variable.
 
 ⌨ Use viper's API to read the `dirs` config key from a `CATPTION_DIRS` environment variable.
+
+Try it out: `CATPTION_DIRS="../../cats" go run catption.go -t "Hello" -b "World" dinner.jpg`
 
 ## Ch.5: End
 
@@ -581,7 +590,7 @@ TODO add some logs
 
 ## Ch.8: Discover os/exec
 
-TODO run xdg-open or other... 
+TODO run xdg-open or other...
 
 ## Ch.8: Conditional compile
 
