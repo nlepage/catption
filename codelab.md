@@ -63,7 +63,7 @@ sudo snap install go --classic
 
 Follow the instructions at [https://golang.org/doc/install#tarball](https://golang.org/doc/install#tarball)
 
-### 🍏 Mac OS
+### 🍏 macOS
 
 #### brew
 
@@ -668,7 +668,17 @@ func measureTemperature(t *Celsius)
 
 ## Ch.8: Discover os/exec
 
-TODO run xdg-open or other...
+We would like catption to open an image viewer as soon as the image has been written to disk.
+
+Most operating systems have commands to open the appropriate viewer for a file:
+ - The `xdg-open` command on 🐧 Linux
+ - The `open` command on 🍏 macOS
+ - The `start` command on 🏁 Windows
+
+⌨ Use the [`os/exec` package](https://pkg.go.dev/os/exec?tab=doc) to execute the command of your OS.
+
+Positive
+: [`Cmd.Run`](https://pkg.go.dev/os/exec?tab=doc#Cmd.Run) starts a command and waits for it to complete.
 
 ## Ch.8: Conditional compile
 

@@ -74,7 +74,7 @@
 </code></pre>
 <h3 is-upgraded>tarbal</h3>
 <p>Follow the instructions at <a href="https://golang.org/doc/install#tarball" target="_blank">https://golang.org/doc/install#tarball</a></p>
-<h2 is-upgraded>🍏 Mac OS</h2>
+<h2 is-upgraded>🍏 macOS</h2>
 <h3 is-upgraded>brew</h3>
 <p>Run:</p>
 <pre><code>brew install go
@@ -635,7 +635,16 @@ func measureTemperature(t *Celsius)
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: Discover os/exec" duration="0">
-        <p>TODO run xdg-open or other...</p>
+        <p>We would like catption to open an image viewer as soon as the image has been written to disk.</p>
+<p>Most operating systems have commands to open the appropriate viewer for a file:</p>
+<ul>
+<li>The <code>xdg-open</code> command on 🐧 Linux</li>
+<li>The <code>open</code> command on 🍏 macOS</li>
+<li>The <code>start</code> command on 🏁 Windows</li>
+</ul>
+<p>⌨ Use the <a href="https://pkg.go.dev/os/exec?tab=doc" target="_blank"><code>os/exec</code> package</a> to execute the command of your OS.</p>
+<aside class="special"><p><a href="https://pkg.go.dev/os/exec?tab=doc#Cmd.Run" target="_blank"><code>Cmd.Run</code></a> starts a command and waits for it to complete.</p>
+</aside>
 
 
       </google-codelab-step>
