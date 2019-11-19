@@ -210,9 +210,9 @@ HELLO CAPSLOCK!
 <li>Automatically generated man pages for your application</li>
 <li>Command aliases so you can change things without breaking them</li>
 <li>The flexibility to define your own help, usage, etc.</li>
-<li>Optional tight integration with <a href="http://github.com/spf13/viper" target="_blank">viper</a> for 12-factor apps</li>
+<li>Optional tight integration with <a href="https://pkg.go.dev/github.com/spf13/viper?tab=overview" target="_blank">viper</a> for 12-factor apps</li>
 </ul>
-<p>👀 Explore cobra&#39;s <a href="https://github.com/spf13/cobra" target="_blank">github page</a> and <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc" target="_blank">documentation</a>.</p>
+<p>👀 Explore cobra&#39;s <a href="https://github.com/spf13/cobra/blob/master/README.md" target="_blank">documentation</a> and <a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc" target="_blank">API</a>.</p>
 
 
       </google-codelab-step>
@@ -342,7 +342,7 @@ func sayHello(args []string) error {
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ch.3 Flags shorthand" duration="0">
+      <google-codelab-step label="Ch.3 🎁 Flags shorthand" duration="0">
         <p>Flags shorthands allow users to type more concise commands.</p>
 <p>⌨ Add some shorthands to <code>cmd</code>:</p>
 <ul>
@@ -392,7 +392,7 @@ func sayHello(args []string) error {
 <li>reading from buffer</li>
 <li>setting explicit values</li>
 </ul>
-<p>👀 Explore viper&#39;s <a href="https://github.com/spf13/viper" target="_blank">github page</a> and <a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc" target="_blank">documentation</a>.</p>
+<p>👀 Explore viper&#39;s <a href="https://github.com/spf13/viper/blob/master/README.md" target="_blank">documentation</a> and <a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc" target="_blank">API</a>.</p>
 
 
       </google-codelab-step>
@@ -558,15 +558,56 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.7: Custom flags" duration="0">
-        <p>We&#39;ve added some logs to catption, using a library called <a href="https://pkg.go.dev/github.com/sirupsen/logrus" target="_blank">logrus</a>.</p>
-<p>Howver we would like to be able to set the log level using a flag.</p>
-<p>In <code>📂catption/codelab/chapter7</code> we now have a <code>logLevel</code> variable used to set the log level.<br>This variable has the type <a href="https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc#Level" target="_blank"><code>logrus.Level</code></a></p>
+        <p>We&#39;ve added some logs to catption using a library called <a href="https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc" target="_blank">logrus</a>.</p>
+<p>However we would like to be able to set the log level using a flag.</p>
+<p>In <code>📂catption/codelab/chapter7</code> we now have a <code>logLevel</code> variable used to set the log level.<br>This variable has the type <a href="https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc#Level" target="_blank"><code>logrus.Level</code></a>.</p>
+<p>In order to create a flag with a custom type, you must implement pflag&#39;s <a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#Value" target="_blank"><code>Value</code> interface</a>.</p>
+<p>This is already done by the type <code>logLevelValue</code>:</p>
+<pre><code>type logLevelValue logrus.Level
+
+var _ pflag.Value = new(logLevelValue)
+
+func (l *logLevelValue) Set(value string) error {
+	lvl, err := logrus.ParseLevel(value)
+	if err != nil {
+		return err
+	}
+	*l = logLevelValue(lvl)
+	return nil
+}
+
+func (l *logLevelValue) String() string {
+	return logrus.Level(*l).String()
+}
+
+func (l *logLevelValue) Type() string {
+	return &#34;string&#34;
+}
+</code></pre>
+<p>⌨ In the <code>init</code> function, create a new <code>--logLevel</code> flag for the <code>logLevel</code> variable.</p>
+<aside class="special"><p>[<code>Command.PersistentFlags</code>]() returns a <code>FlagSet</code> used for the current command and its subcommands.</p>
+</aside>
+<aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.Var" target="_blank"><code>FlagSet.Var</code></a> defines a custom typed flag.</p>
+</aside>
+<p>It is possible to perform a type cast between pointer types, here is an example:</p>
+<pre><code>type Celsius float64
+
+func example() {
+	var temperature float64
+	measureTemperature((*Celsius)(&amp;temperature))
+	fmt.Println(&#34;temp:&#34;, temperature)
+}
+
+// measureTemperature stores a new measure in the t pointer
+func measureTemperature(t *Celsius)
+</code></pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Ch.7: 🎁 Discover logrus" duration="0">
-        <p>TODO add some logs</p>
+        <p>👀 Have a look at logrus&#39;s <a href="https://github.com/sirupsen/logrus/blob/master/README.md" target="_blank">documentation</a> and <a href="https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc" target="_blank">API</a></p>
+<p>⌨ Add some new logs in catption.</p>
 
 
       </google-codelab-step>

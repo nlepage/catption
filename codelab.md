@@ -233,9 +233,9 @@ Cobra provides:
 * Automatically generated man pages for your application
 * Command aliases so you can change things without breaking them
 * The flexibility to define your own help, usage, etc.
-* Optional tight integration with [viper](http://github.com/spf13/viper) for 12-factor apps
+* Optional tight integration with [viper](https://pkg.go.dev/github.com/spf13/viper?tab=overview) for 12-factor apps
 
-👀 Explore cobra's [github page](https://github.com/spf13/cobra) and [documentation](https://pkg.go.dev/github.com/spf13/cobra?tab=doc).
+👀 Explore cobra's [documentation](https://github.com/spf13/cobra/blob/master/README.md) and [API](https://pkg.go.dev/github.com/spf13/cobra?tab=doc).
 
 ## Ch.2: Create a command
 
@@ -369,7 +369,7 @@ Having `var i = 42`, use `&i` to get a pointer to `i`, `&i` has the type `*int`.
 
 ⌨ Play around with your new command, some pictures are available in `📂cats/`
 
-## Ch.3 Flags shorthand
+## Ch.3 🎁 Flags shorthand
 
 Flags shorthands allow users to type more concise commands.
 
@@ -415,7 +415,7 @@ It supports:
 * reading from buffer
 * setting explicit values
 
-👀 Explore viper's [github page](https://github.com/spf13/viper) and [documentation](https://pkg.go.dev/github.com/spf13/viper?tab=doc).
+👀 Explore viper's [documentation](https://github.com/spf13/viper/blob/master/README.md) and [API](https://pkg.go.dev/github.com/spf13/viper?tab=doc).
 
 ## Ch.4: Read config file
 
@@ -588,16 +588,68 @@ It would be nice to set this variable at compile time, with a git tag or commit 
 
 ## Ch.7: Custom flags
 
-We've added some logs to catption, using a library called [logrus](https://pkg.go.dev/github.com/sirupsen/logrus).
+We've added some logs to catption using a library called [logrus](https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc).
 
-Howver we would like to be able to set the log level using a flag.
+However we would like to be able to set the log level using a flag.
 
 In `📂catption/codelab/chapter7` we now have a `logLevel` variable used to set the log level.
-This variable has the type [`logrus.Level`](https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc#Level)
+This variable has the type [`logrus.Level`](https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc#Level).
+
+In order to create a flag with a custom type, you must implement pflag's [`Value` interface](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#Value).
+
+This is already done by the type `logLevelValue`:
+
+```go
+type logLevelValue logrus.Level
+
+var _ pflag.Value = new(logLevelValue)
+
+func (l *logLevelValue) Set(value string) error {
+	lvl, err := logrus.ParseLevel(value)
+	if err != nil {
+		return err
+	}
+	*l = logLevelValue(lvl)
+	return nil
+}
+
+func (l *logLevelValue) String() string {
+	return logrus.Level(*l).String()
+}
+
+func (l *logLevelValue) Type() string {
+	return "string"
+}
+```
+
+⌨ In the `init` function, create a new `--logLevel` flag for the `logLevel` variable.
+
+Positive
+: [`Command.PersistentFlags`]() returns a `FlagSet` used for the current command and its subcommands.
+
+Positive
+: [`FlagSet.Var`](https://pkg.go.dev/github.com/spf13/pflag?tab=doc#FlagSet.Var) defines a custom typed flag.
+
+It is possible to perform a type cast between pointer types, here is an example:
+
+```go
+type Celsius float64
+
+func example() {
+	var temperature float64
+	measureTemperature((*Celsius)(&temperature))
+	fmt.Println("temp:", temperature)
+}
+
+// measureTemperature stores a new measure in the t pointer
+func measureTemperature(t *Celsius)
+```
 
 ## Ch.7: 🎁 Discover logrus
 
-TODO add some logs
+👀 Have a look at logrus's [documentation](https://github.com/sirupsen/logrus/blob/master/README.md) and [API](https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc)
+
+⌨ Add some new logs in catption.
 
 ## Ch.7: End
 
