@@ -187,7 +187,7 @@ $ hello -u capslock
 HELLO CAPSLOCK!
 ```
 
-⌨ Explore the `flag` [package](https://pkg.go.dev/flag) and parse the `-u` flag in `hello.go`.
+⌨ Explore the [`flag` package](https://pkg.go.dev/flag) and parse the `-u` flag in `hello.go`.
 
 Positive
 : [`flag.Args`](https://pkg.go.dev/flag?tab=doc#Args) returns the non-flag command-line arguments.
@@ -196,7 +196,7 @@ Positive
 : [`strings.ToUpper`](https://pkg.go.dev/strings?tab=doc#ToUpper) returns an upper case copy of a string.
 
 Positive
-: [`fmt.Sprintf](https://pkg.go.dev/fmt?tab=doc#Sprintf) returns a formated string
+: [`fmt.Sprintf](https://pkg.go.dev/fmt?tab=doc#Sprintf) returns a formatted string
 
 ## Ch.1: End
 
