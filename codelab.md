@@ -588,7 +588,12 @@ It would be nice to set this variable at compile time, with a git tag or commit 
 
 ## Ch.7: Custom flags
 
-TODO parse logrus's log level
+We've added some logs to catption, using a library called [logrus](https://pkg.go.dev/github.com/sirupsen/logrus).
+
+Howver we would like to be able to set the log level using a flag.
+
+In `📂catption/codelab/chapter7` we now have a `logLevel` variable used to set the log level.
+This variable has the type [`logrus.Level`](https://pkg.go.dev/github.com/sirupsen/logrus?tab=doc#Level)
 
 ## Ch.7: 🎁 Discover logrus
 
