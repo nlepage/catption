@@ -675,14 +675,26 @@ Most operating systems have commands to open the appropriate viewer for a file:
  - The `open` command on 🍏 macOS
  - The `start` command on 🏁 Windows
 
-⌨ Use the [`os/exec` package](https://pkg.go.dev/os/exec?tab=doc) to execute the command of your OS.
+⌨ Use the [`os/exec` package](https://pkg.go.dev/os/exec?tab=doc) to execute the appropriate command for your OS and display the image.
 
 Positive
 : [`Cmd.Run`](https://pkg.go.dev/os/exec?tab=doc#Cmd.Run) starts a command and waits for it to complete.
 
 ## Ch.8: Conditional compile
 
-TODO create _linux.go...
+Some users don't have the same OS as you.
+
+We would like to cross-compile catption to other systems, but the command for opening a viewer is system dependent!
+
+The go compiler is able to include/exclude source files, based on their suffix.
+`source_darwin.go` will only be compiled when targeting macOS systems.
+
+⌨ Create 3 files with each an `openCmd` string const:
+ - `open_linux.go` for Linux
+ - `open_darwin.go` for macOS
+ - `open_windows.go` for Windows
+
+⌨ Use `openCmd` to call [`exec.Command`](https://pkg.go.dev/os/exec?tab=doc#Command)
 
 ## Ch.8: 🎁 Build tags
 

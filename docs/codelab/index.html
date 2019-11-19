@@ -642,7 +642,7 @@ func measureTemperature(t *Celsius)
 <li>The <code>open</code> command on 🍏 macOS</li>
 <li>The <code>start</code> command on 🏁 Windows</li>
 </ul>
-<p>⌨ Use the <a href="https://pkg.go.dev/os/exec?tab=doc" target="_blank"><code>os/exec</code> package</a> to execute the command of your OS.</p>
+<p>⌨ Use the <a href="https://pkg.go.dev/os/exec?tab=doc" target="_blank"><code>os/exec</code> package</a> to execute the appropriate command for your OS and display the image.</p>
 <aside class="special"><p><a href="https://pkg.go.dev/os/exec?tab=doc#Cmd.Run" target="_blank"><code>Cmd.Run</code></a> starts a command and waits for it to complete.</p>
 </aside>
 
@@ -650,7 +650,16 @@ func measureTemperature(t *Celsius)
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: Conditional compile" duration="0">
-        <p>TODO create _linux.go...</p>
+        <p>Some users don&#39;t have the same OS as you.</p>
+<p>We would like to cross-compile catption to other systems, but the command for opening a viewer is system dependent!</p>
+<p>The go compiler is able to include/exclude source files, based on their suffix.<br><code>source_darwin.go</code> will only be compiled when targeting macOS systems.</p>
+<p>⌨ Create 3 files with each an <code>openCmd</code> string const:</p>
+<ul>
+<li><code>open_linux.go</code> for Linux</li>
+<li><code>open_darwin.go</code> for macOS</li>
+<li><code>open_windows.go</code> for Windows</li>
+</ul>
+<p>⌨ Use <code>openCmd</code> to call <a href="https://pkg.go.dev/os/exec?tab=doc#Command" target="_blank"><code>exec.Command</code></a></p>
 
 
       </google-codelab-step>
