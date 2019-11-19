@@ -714,3 +714,25 @@ One of our users would like to run catption on a FreeBSD system.
  - Discover `os/exec` package
  - Use conditional compilation
  - 🎁  Use build tags
+
+## End
+
+🎉 Congratulations! You have completed the codelab!
+
+You now know the basics to build you own CLI with Go.
+
+### What we've covered
+ - Setup a development environment
+ - Discover `os`, `os/exec` and `flag` packages
+ - Discover `github.com/spf13/cobra` CLI library
+ - Create commands and subcommands
+ - Read command flags and args
+ - Discover `github.com/spf13/viper` config library
+ - Read and write a config file
+ - Put `cobra` and `viper` together
+ - Read environment variables
+ - Discover `github.com/sirupsen/logrus` logging library
+ - Use build time variable injection
+ - Use conditional compilation and build tags
+
+The full working catption CLI source is available at the repositories root.
