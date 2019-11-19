@@ -665,7 +665,10 @@ func measureTemperature(t *Celsius)
       </google-codelab-step>
     
       <google-codelab-step label="Ch.8: 🎁 Build tags" duration="0">
-        <p>TODO use build tags to match more than linux...</p>
+        <p>One of our users would like to run catption on a FreeBSD system.</p>
+<p><code>xdg-open</code> is also available on this system, it would be nice to use the same <code>openCmd</code> const for Linux and FreeBSD.</p>
+<p>⌨ Rename <code>open_linux.go</code> to <code>open_xdg.go</code>.</p>
+<p>⌨ Add <a href="https://golang.org/pkg/go/build/#hdr-Build_Constraints" target="_blank">build tags</a> to <code>open_xdg.go</code> in order to target Linux and FreeBSD.</p>
 
 
       </google-codelab-step>

@@ -1,4 +1,4 @@
-// +build linux arm
+// +build linux freebsd
 
 package main
 

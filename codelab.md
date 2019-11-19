@@ -698,7 +698,13 @@ The go compiler is able to include/exclude source files, based on their suffix.
 
 ## Ch.8: 🎁 Build tags
 
-TODO use build tags to match more than linux...
+One of our users would like to run catption on a FreeBSD system.
+
+`xdg-open` is also available on this system, it would be nice to use the same `openCmd` const for Linux and FreeBSD.
+
+⌨ Rename `open_linux.go` to `open_xdg.go`.
+
+⌨ Add [build tags](https://golang.org/pkg/go/build/#hdr-Build_Constraints) to `open_xdg.go` in order to target Linux and FreeBSD.
 
 ## Ch.8: End
 
