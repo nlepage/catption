@@ -75,6 +75,11 @@
 <h3 is-upgraded>tarbal</h3>
 <p>Follow the instructions at <a href="https://golang.org/doc/install#tarball" target="_blank">https://golang.org/doc/install#tarball</a></p>
 <h2 is-upgraded>🍏 Mac OS</h2>
+<h3 is-upgraded>brew</h3>
+<p>Run:</p>
+<pre><code>brew install go
+</code></pre>
+<h3 is-upgraded>tarbal</h3>
 <p>Download the package file at <a href="https://golang.org/dl/" target="_blank">https://golang.org/dl/</a>, open it, and follow the prompts.</p>
 <h2 is-upgraded>🏁 Windows</h2>
 <p>Download the MSI file at <a href="https://golang.org/dl/" target="_blank">https://golang.org/dl/</a>, open it, and follow the prompts.</p>
@@ -124,7 +129,7 @@ func main() {
 	fmt.Println(&#34;Hello World!&#34;)
 }
 </code></pre>
-<p>⌨ Execute this program by running <code>go run .</code>.</p>
+<p>⌨ Execute this program by running <code>go run hello.go</code>.</p>
 <h2 is-upgraded>Format the message</h2>
 <p>We would like to replace <code>World</code> by a variable in our message.</p>
 <p>⌨ Create a new string variable:</p>
@@ -154,10 +159,12 @@ func main() {
 <pre><code>$ hello -u capslock
 HELLO CAPSLOCK!
 </code></pre>
-<p>⌨ Explore the <code>flag</code> package and parse the <code>-u</code> flag in <code>hello.go</code>.</p>
+<p>⌨ Explore the <a href="https://pkg.go.dev/flag" target="_blank"><code>flag</code> package</a> and parse the <code>-u</code> flag in <code>hello.go</code>.</p>
 <aside class="special"><p><a href="https://pkg.go.dev/flag?tab=doc#Args" target="_blank"><code>flag.Args</code></a> returns the non-flag command-line arguments.</p>
 </aside>
 <aside class="special"><p><a href="https://pkg.go.dev/strings?tab=doc#ToUpper" target="_blank"><code>strings.ToUpper</code></a> returns an upper case copy of a string.</p>
+</aside>
+<aside class="special"><p><a href="https://pkg.go.dev/fmt?tab=doc#Sprintf" target="_blank">`fmt.Sprintf</a> returns a formatted string</p>
 </aside>
 
 
@@ -243,13 +250,13 @@ func sayHello(args []string) error {
 }
 </code></pre>
 <h2 is-upgraded>Describe the command</h2>
-<p>⌨ Fill the <code>Use</code> and <code>Long</code> fields of the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run .</code> to see the result.</p>
+<p>⌨ Fill the <code>Use</code> and <code>Long</code> fields of the <code>cmd</code><a href="https://pkg.go.dev/github.com/spf13/cobra?tab=doc#Command" target="_blank">Command struct</a>, then execute <code>go run hello.go -h</code> to see the result.</p>
 <h2 is-upgraded>Implement the command</h2>
-<p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code> in order to have a working hello command, execute <code>go run . cobra</code> to see the result.</p>
+<p>⌨ Call <code>sayHello</code> in the <code>RunE</code> function of <code>cmd</code> in order to have a working hello command, execute <code>go run hello.go cobra</code> to see the result.</p>
 <aside class="warning"><p><code>sayHello</code> may return an error, you may forward this error to the caller of <code>RunE</code>.</p>
 </aside>
 <h2 is-upgraded>Version the command</h2>
-<p>⌨ Finally fill the <code>Version</code> field of <code>cmd</code>, then execute <code>go run .</code> to see the result.</p>
+<p>⌨ Finally fill the <code>Version</code> field of <code>cmd</code>, then execute <code>go run hello-go --version</code> to see the result.</p>
 
 
       </google-codelab-step>
@@ -423,6 +430,7 @@ func sayHello(args []string) error {
   - &#34;.&#34;
   - &#34;../../cats&#34;
 </code></pre>
+<p>You can now try your configuration: <code>go run catption.go -t &#34;Hello&#34; -b &#34;World&#34; dinner.jpg</code></p>
 
 
       </google-codelab-step>
@@ -470,6 +478,7 @@ func sayHello(args []string) error {
 </aside>
 <aside class="special"><p><a href="https://pkg.go.dev/github.com/spf13/viper?tab=doc#BindPFlag" target="_blank"><code>viper.BindPFlag</code></a> binds a config key to a <code>*pflag.Flag</code>.</p>
 </aside>
+<p>Try it out: <code>go run catption.go -t &#34;Hello&#34; -b &#34;World&#34; --dir &#34;../../cats&#34; --dir &#34;.&#34; dinner.jpg</code></p>
 
 
       </google-codelab-step>
@@ -478,6 +487,7 @@ func sayHello(args []string) error {
         <p>One of our users would like to deploy catption on a kubernetes cluster.</p>
 <p>The easiest way for him/her to specify the input files directories is to use an environment variable.</p>
 <p>⌨ Use viper&#39;s API to read the <code>dirs</code> config key from a <code>CATPTION_DIRS</code> environment variable.</p>
+<p>Try it out: <code>CATPTION_DIRS=&#34;../../cats&#34; go run catption.go -t &#34;Hello&#34; -b &#34;World&#34; dinner.jpg</code></p>
 
 
       </google-codelab-step>
