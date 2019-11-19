@@ -67,7 +67,7 @@ Follow the instructions at [https://golang.org/doc/install#tarball](https://gola
 
 #### brew
 
-Run: 
+Run:
 ```sh
 brew install go
 ```
@@ -564,7 +564,7 @@ Positive
 
 ## Ch.6: 🎁 Compile vars
 
-Using a constant value fo `cmd`'s `Version` field is not very useful.
+Using a constant value for `cmd`'s `Version` field is not very useful.
 
 It would be nice to set this variable at compile time, with a git tag or commit hash.
 
