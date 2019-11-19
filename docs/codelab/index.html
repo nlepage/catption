@@ -528,7 +528,7 @@ func sayHello(args []string) error {
       </google-codelab-step>
     
       <google-codelab-step label="Ch.6: 🎁 Compile vars" duration="0">
-        <p>Using a constant value fo <code>cmd</code>&#39;s <code>Version</code> field is not very useful.</p>
+        <p>Using a constant value for <code>cmd</code>&#39;s <code>Version</code> field is not very useful.</p>
 <p>It would be nice to set this variable at compile time, with a git tag or commit hash.</p>
 <p>⌨ Create a <code>version</code> variable at package level, and set <code>cmd.Version</code>&#39;s value with this variable.</p>
 <p>⌨ Try changing the binary&#39;s version with build flags: <code>go build -ldflags &#34;-X main.version=1.0.0&#34;</code></p>
