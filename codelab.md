@@ -39,11 +39,11 @@ The steps marked with a 🎁 are optional.
 
 In order to go through this codelab, you are going to need a working Go development environment.
 
-The minimum required version is Go 1.12.
+The minimum required version is Go 1.13.
 
 Positive
 : Already have Go installed?
-Make sure you are running a version >= 1.12 by running `go version`.
+Make sure you are running a version >= 1.13 by running `go version`.
 If it is the case you may proceed to the next step.
 
 ### 🐧 Linux

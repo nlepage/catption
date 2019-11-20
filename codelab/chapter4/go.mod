@@ -1,6 +1,6 @@
 module github.com/Zenika/catption/codelab/chapter4
 
-go 1.12
+go 1.13
 
 require (
 	github.com/Zenika/catption/lib v0.0.0-00010101000000-000000000000

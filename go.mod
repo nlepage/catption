@@ -1,6 +1,6 @@
 module github.com/Zenika/catption
 
-go 1.12
+go 1.13
 
 require (
 	github.com/Zenika/catption/lib v0.0.0-20191118230101-baf24469406f
