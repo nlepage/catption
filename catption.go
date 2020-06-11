@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/pflag"
 
-	catption "github.com/Zenika/catption/lib"
+	catption "github.com/nlepage/catption/lib"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

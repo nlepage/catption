@@ -1,10 +1,11 @@
-module github.com/Zenika/catption/lib
+module github.com/nlepage/catption/lib
 
 go 1.13
 
 require (
-	github.com/Zenika/catption/font/impact v0.0.0-20191118013743-7edaa928cf33
 	github.com/fogleman/gg v1.3.0
+	github.com/nlepage/catption/font/impact v0.0.0-00010101000000-000000000000
+	golang.org/x/image v0.0.0-20200609002522-3f4726a040e8 // indirect
 )
 
-replace github.com/Zenika/catption/font => ../font
+replace github.com/nlepage/catption/font/impact => ../font/impact

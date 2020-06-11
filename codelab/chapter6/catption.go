@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	catption "github.com/Zenika/catption/lib"
+	catption "github.com/nlepage/catption/lib"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

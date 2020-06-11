@@ -11,11 +11,11 @@
 > Codelab to learn the basics of writing a Go CLI tool
 
 <p style="text-align: center;">
-  <img alt="catption demo" src="https://raw.githubusercontent.com/Zenika/catption/master/demo.gif" />
+  <img alt="catption demo" src="https://raw.githubusercontent.com/nlepage/catption/master/demo.gif" />
 </p>
 
 <p style="font-size: 2em; text-align: center;">
-  <a href="https://zenika.github.io/catption/codelab?index=catption">🗲 Start the codelab</a>
+  <a href="https://nlepage.github.io/catption/codelab?index=catption">🗲 Start the codelab</a>
 </p>
 
 ## Author
@@ -28,13 +28,13 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Zenika/catption/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/nlepage/catption/issues).
 
 ## Show your support
 
-[Give a ⭐️](https://github.com/Zenika/catption) if this project helped you!
+[Give a ⭐️](https://github.com/nlepage/catption) if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [Zenika](https://github.com/Zenika).<br />
+Copyright © 2019 [nlepage](https://github.com/nlepage).<br />
 This project is [Apache 2.0](https://spdx.org/licenses/Apache-2.0.html) licensed.

@@ -1,4 +1,4 @@
-module github.com/Zenika/catption/codelab/chapter2
+module github.com/nlepage/catption/codelab/chapter2
 
 go 1.13
 

@@ -4,8 +4,8 @@ import (
 	"image"
 	"math"
 
-	"github.com/Zenika/catption/font/impact"
 	"github.com/fogleman/gg"
+	"github.com/nlepage/catption/font/impact"
 )
 
 const (

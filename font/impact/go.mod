@@ -1,4 +1,4 @@
-module github.com/Zenika/catption/font/impact
+module github.com/nlepage/catption/font/impact
 
 go 1.13
 

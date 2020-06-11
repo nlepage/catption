@@ -4,7 +4,7 @@ categories: golang
 tags: cli
 status: Published
 authors: Nicolas Lepage
-feedback link: https://github.com/Zenika/catption/issues
+feedback link: https://github.com/nlepage/catption/issues
 
 # Basics of writing a Go CLI tool
 
@@ -93,12 +93,12 @@ The prefered way is `git`, which will allow you to keep track of your work and r
 Run:
 
 ```sh
-git clone https://github.com/Zenika/catption.git
+git clone https://github.com/nlepage/catption.git
 ```
 
 ### zip
 
-Download [https://github.com/Zenika/catption/archive/master.zip](https://github.com/Zenika/catption/archive/master.zip) and unzip it.
+Download [https://github.com/nlepage/catption/archive/master.zip](https://github.com/nlepage/catption/archive/master.zip) and unzip it.
 
 Positive
 : Each chapter of the codelab has its own directory:

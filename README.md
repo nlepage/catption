@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-go get github.com/Zenika/catption
+go get github.com/nlepage/catption
 ```
 
 ## Usage
@@ -22,11 +22,11 @@ go get github.com/Zenika/catption
 catption dinner --top "a Go CLI..." --bottom "any generics yet?"
 ```
 
-![catption demo](https://raw.githubusercontent.com/Zenika/catption/master/demo.gif)
+![catption demo](https://raw.githubusercontent.com/nlepage/catption/master/demo.gif)
 
 ## Why ?
 
-catption was made as a [codelab](https://zenika.github.io/catption/) for learning the basics of creating a Go CLI tool.
+catption was made as a [codelab](https://nlepage.github.io/catption/) for learning the basics of creating a Go CLI tool.
 
 ## Author
 
@@ -38,7 +38,7 @@ catption was made as a [codelab](https://zenika.github.io/catption/) for learnin
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Zenika/catption/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/nlepage/catption/issues).
 
 ## Show your support
 
@@ -46,7 +46,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [Zenika](https://github.com/Zenika).<br />
+Copyright © 2019 [nlepage](https://github.com/nlepage).<br />
 This project is [Apache 2.0](https://spdx.org/licenses/Apache-2.0.html) licensed.
 
 ***
