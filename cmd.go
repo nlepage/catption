@@ -11,9 +11,9 @@ var (
 	logLevel = logrus.InfoLevel
 
 	cmd = &cobra.Command{
-		Use:  "catption",
-		Long: "Cat caption generator CLI",
-		Args: cobra.ExactArgs(1),
+		Use:   "catption [FILE]",
+		Short: "Cat caption generator CLI",
+		Args:  cobra.ExactArgs(1),
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			logrus.SetLevel(logLevel)
 

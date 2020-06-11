@@ -11,9 +11,9 @@ import (
 )
 
 var dirCmd = &cobra.Command{
-	Use:  "dir",
-	Long: "Adds a directory to the input files directory",
-	Args: cobra.ExactArgs(1),
+	Use:   "dir [DIRECTORY]",
+	Short: "Add a new directory to the input files directories",
+	Args:  cobra.ExactArgs(1),
 	RunE: func(_ *cobra.Command, args []string) error {
 		return addDir(args[0])
 	},
