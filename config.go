@@ -29,6 +29,7 @@ func initConfig() error {
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
 			return err
 		}
+		logrus.Debug("No config file found")
 	} else {
 		logrus.Debugf("Using config file %s", viper.ConfigFileUsed())
 	}
