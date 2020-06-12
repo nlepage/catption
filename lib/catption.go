@@ -2,6 +2,8 @@ package catption
 
 import (
 	"image"
+	"image/jpeg"
+	"io"
 	"math"
 
 	"github.com/fogleman/gg"
@@ -26,18 +28,32 @@ type Catption struct {
 	img image.Image
 }
 
+func New(img image.Image) *Catption {
+	return &Catption{
+		img:      img,
+		Size:     DefaultSize,
+		Margin:   DefaultMargin,
+		FontSize: DefaultFontSize,
+	}
+}
+
+func ReadJPG(r io.Reader) (*Catption, error) {
+	img, err := jpeg.Decode(r)
+	if err != nil {
+		return nil, err
+	}
+
+	return New(img), nil
+}
+
 func LoadJPG(name string) (*Catption, error) {
 	img, err := gg.LoadJPG(name)
 	if err != nil {
 		return nil, err
 	}
 
-	return &Catption{
-		img:      img,
-		Size:     DefaultSize,
-		Margin:   DefaultMargin,
-		FontSize: DefaultFontSize,
-	}, nil
+	return New(img), nil
+
 }
 
 func (c *Catption) Image() (image.Image, error) {

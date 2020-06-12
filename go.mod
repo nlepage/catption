@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gobuffalo/here v0.6.2 // indirect
+	github.com/gorilla/mux v1.7.4
 	github.com/markbates/pkger v0.17.0 // indirect
 	github.com/mitchellh/mapstructure v1.3.2 // indirect
 	github.com/nlepage/catption/lib v0.0.0-00010101000000-000000000000
