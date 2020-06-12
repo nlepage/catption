@@ -1,8 +1,10 @@
 package main
 
 import (
+	"html/template"
 	"image/jpeg"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
@@ -21,7 +23,7 @@ var httpCmd = &cobra.Command{
 		r := mux.NewRouter()
 
 		r.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-			if _, err := res.Write([]byte(`
+			tmpl, err := template.New("index").Parse(`
 				<!DOCTYPE html>
 				<html lang="en">
 					<head>
@@ -41,6 +43,15 @@ var httpCmd = &cobra.Command{
 							</p>
 							<p>
 								<label>Bottom <input name="bottom" type="text"></label>
+							</p>
+							<p>
+								<label>Font size <input name="font-size" type="number" placeholder="{{ .DefaultFontSize }}"></label>
+							</p>
+							<p>
+								<label>Margin <input name="margin" type="number" placeholder="{{ .DefaultMargin }}"></label>
+							</p>
+							<p>
+								<label>Image size <input name="size" type="number" placeholder="{{ .DefaultSize }}"></label>
 							</p>
 							<p>
 								<button type="submit">Catption</button>
@@ -73,7 +84,16 @@ var httpCmd = &cobra.Command{
 						</script>
 					</body>
 				</html>
-			`)); err != nil {
+			`)
+			if err != nil {
+				panic(err)
+			}
+
+			if err = tmpl.Execute(res, map[string]interface{}{
+				"DefaultFontSize": catption.DefaultFontSize,
+				"DefaultMargin":   catption.DefaultMargin,
+				"DefaultSize":     catption.DefaultSize,
+			}); err != nil {
 				panic(err)
 			}
 		})
@@ -101,6 +121,15 @@ var httpCmd = &cobra.Command{
 
 			cat.Top = req.FormValue("top")
 			cat.Bottom = req.FormValue("bottom")
+			if sFontSize := req.FormValue("font-size"); sFontSize != "" {
+				cat.FontSize, _ = strconv.ParseFloat(sFontSize, 64)
+			}
+			if sMargin := req.FormValue("margin"); sMargin != "" {
+				cat.Margin, _ = strconv.ParseFloat(sMargin, 64)
+			}
+			if sSize := req.FormValue("size"); sSize != "" {
+				cat.Size, _ = strconv.ParseFloat(sSize, 64)
+			}
 
 			img, err := cat.Image()
 			if err != nil {

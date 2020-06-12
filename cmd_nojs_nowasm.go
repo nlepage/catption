@@ -26,7 +26,7 @@ func init() {
 	cmd.Flags().StringVarP(&bottom, "bottom", "b", "", "Bottom text")
 
 	cmd.Flags().Float64VarP(&size, "size", "s", catption.DefaultSize, "Output image size")
-	cmd.Flags().Float64Var(&fontSize, "fontSize", catption.DefaultFontSize, "Font in points")
+	cmd.Flags().Float64Var(&fontSize, "fontSize", catption.DefaultFontSize, "Font size in points")
 	cmd.Flags().Float64Var(&margin, "margin", catption.DefaultMargin, "Top/bottom text margin")
 
 	cmd.Flags().StringVarP(&out, "out", "o", out, "Output file")
