@@ -71,7 +71,7 @@ var httpCmd = &cobra.Command{
 
 								const body = new FormData(form)
 
-								const res = await fetch("/catption", { method: 'POST', body })
+								const res = await fetch("catption", { method: 'POST', body })
 								if (!res.ok) throw Error(res.status + ' ' + res.statusText)
 
 								const src = URL.createObjectURL(await res.blob())
