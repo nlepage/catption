@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>wasm demo</title>
-    <script src="https://cdn.jsdelivr.net/gh/nlepage/go-wasm-http-server@b25c20e8f52c91754ad7294f7acc6b9cea149b14/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/nlepage/go-wasm-http-server@21d93ddbbb6dc78ff97632a8bc77c0a3b8186c41/index.js"></script>
   </head>
   <body>
     <script>
-      wasmhttp.register('catption.wasm', { base: 'catption', argv: ['http'] })
+      wasmhttp.register('catption.wasm', { base: 'catption', args: ['http'] })
     </script>
   </body>
 </html>
