@@ -16,10 +16,12 @@ func init() {
 	cmd.AddCommand(httpCmd)
 }
 
+var httpHandler http.Handler
+
 var httpCmd = &cobra.Command{
 	Use:   "http",
 	Short: "Start catption HTTP server",
-	RunE: func(_ *cobra.Command, args []string) error {
+	PreRun: func(_ *cobra.Command, args []string) {
 		r := mux.NewRouter()
 
 		r.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
@@ -142,6 +144,6 @@ var httpCmd = &cobra.Command{
 			}
 		})
 
-		return http.ListenAndServe(":8888", r)
+		httpHandler = r
 	},
 }

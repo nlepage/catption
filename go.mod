@@ -9,6 +9,7 @@ require (
 	github.com/markbates/pkger v0.17.0 // indirect
 	github.com/mitchellh/mapstructure v1.3.2 // indirect
 	github.com/nlepage/catption/lib v0.0.0-00010101000000-000000000000
+	github.com/nlepage/go-wasm-http-server v0.0.0-20200528224028-5f09cb3c8aaf
 	github.com/pelletier/go-toml v1.8.0 // indirect
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/afero v1.2.2 // indirect
