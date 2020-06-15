@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"image/jpeg"
 	"net/http"
@@ -101,18 +102,24 @@ var httpCmd = &cobra.Command{
 		})
 
 		r.HandleFunc("/catption", func(res http.ResponseWriter, req *http.Request) {
+			fmt.Println("/catption 1")
+
 			file, info, err := req.FormFile("file")
 			if err != nil {
 				panic(err)
 			}
+
+			fmt.Println("/catption 2")
 
 			cType := info.Header.Get("content-type")
 			var cat *catption.Catption
 
 			switch cType {
 			case "image/jpeg":
+				fmt.Println("/catption 3")
 				cat, err = catption.ReadJPG(file)
 			default:
+				fmt.Println("/catption 4")
 				res.WriteHeader(400)
 				return
 			}
@@ -120,6 +127,8 @@ var httpCmd = &cobra.Command{
 			if err != nil {
 				panic(err)
 			}
+
+			fmt.Println("/catption 5")
 
 			cat.Top = req.FormValue("top")
 			cat.Bottom = req.FormValue("bottom")
@@ -133,15 +142,21 @@ var httpCmd = &cobra.Command{
 				cat.Size, _ = strconv.ParseFloat(sSize, 64)
 			}
 
+			fmt.Println("/catption 6")
+
 			img, err := cat.Image()
 			if err != nil {
 				panic(err)
 			}
 
+			fmt.Println("/catption 7")
+
 			res.Header().Add("content-type", cType)
 			if err = jpeg.Encode(res, img, nil); err != nil {
 				panic(err)
 			}
+
+			fmt.Println("/catption 8")
 		})
 
 		httpHandler = r
