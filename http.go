@@ -38,7 +38,7 @@ var httpCmd = &cobra.Command{
 
 						<form id="catption-form">
 							<p>
-								<input name="file" type="file" required>
+								<input name="file" type="file" accept="image/jpeg" required>
 							</p>
 							<p>
 								<label>Top <input name="top" type="text"></label>
