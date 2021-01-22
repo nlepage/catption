@@ -1,1 +1,11 @@
-importScripts('https://cdn.jsdelivr.net/gh/nlepage/go-wasm-http-server@21d93ddbbb6dc78ff97632a8bc77c0a3b8186c41/sw.js')
+importScripts('https://cdn.jsdelivr.net/gh/nlepage/go-wasm-http-server@574bb8928c6a7a5c4feeaf7cee9530ea5e3c04b1/sw.js')
+
+addEventListener('install', (event) => {
+  event.waitUntil(skipWaiting())
+})
+  
+addEventListener('activate', event => {
+  event.waitUntil(clients.claim())
+})
+
+registerWasmHTTPListener('catption.wasm', undefined, ['http'])
