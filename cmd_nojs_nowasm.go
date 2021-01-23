@@ -22,6 +22,8 @@ var (
 )
 
 func init() {
+	cmd.Use = "catption [FILE]"
+
 	cmd.Flags().StringVarP(&top, "top", "t", "", "Top text")
 	cmd.Flags().StringVarP(&bottom, "bottom", "b", "", "Bottom text")
 
