@@ -24,6 +24,8 @@ catption dinner --top "a Go CLI..." --bottom "any generics yet?"
 
 ![catption demo](https://raw.githubusercontent.com/nlepage/catption/master/demo.gif)
 
+## [Online demo](https://nlepage.github.io/catption/wasm/)
+
 ## Why ?
 
 catption was made as a [codelab](https://nlepage.github.io/catption/) for learning the basics of creating a Go CLI tool.
