@@ -164,6 +164,8 @@ github.com/nlepage/go-wasm-http-server v0.0.0-20200615235624-da00fd7bd1a3 h1:FSY
 github.com/nlepage/go-wasm-http-server v0.0.0-20200615235624-da00fd7bd1a3/go.mod h1:w7OuqOGV2cTSMdRiCv0APoZ9nN0nlk+EC9NJ9r6LnNk=
 github.com/nlepage/go-wasm-http-server v0.0.0-20210122003615-c1fcadf0f814 h1:6d8gRR8gRYHrau8ebF66x6/XxDSWTv3BuaIqUac2T4o=
 github.com/nlepage/go-wasm-http-server v0.0.0-20210122003615-c1fcadf0f814/go.mod h1:w7OuqOGV2cTSMdRiCv0APoZ9nN0nlk+EC9NJ9r6LnNk=
+github.com/nlepage/go-wasm-http-server v0.0.0-20210124203237-ce9bfc89b816 h1:5RgyGZ1baoFiaNUOX22yTwudZiEM2TNJtYnZkQFWnuE=
+github.com/nlepage/go-wasm-http-server v0.0.0-20210124203237-ce9bfc89b816/go.mod h1:w7OuqOGV2cTSMdRiCv0APoZ9nN0nlk+EC9NJ9r6LnNk=
 github.com/oklog/ulid v1.3.1/go.mod h1:CirwcVhetQ6Lv90oh/F+FBtV6XMibvdAFo93nm5qn4U=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.2.0 h1:T5zMGML61Wp+FlcbWjRDT7yAxhJNAiPPLOFECq181zc=
