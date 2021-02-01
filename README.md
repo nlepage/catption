@@ -48,7 +48,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [nlepage](https://github.com/nlepage).<br />
+Copyright © 2021 [nlepage](https://github.com/nlepage).<br />
 This project is [Apache 2.0](https://spdx.org/licenses/Apache-2.0.html) licensed.
 
 ***
