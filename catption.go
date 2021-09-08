@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -19,7 +20,7 @@ var (
 	top, bottom            string
 	size, fontSize, margin float64
 	out                    = "out.jpg"
-	dirs                   = []string{"."}
+	dirs                   []string
 	open                   = true
 
 	version = "master"
@@ -27,9 +28,9 @@ var (
 	logLevel = logrus.InfoLevel
 
 	cmd = &cobra.Command{
-		Use:  "catption [flags] <input file>",
-		Long: "Cat caption generator CLI",
-		Args: cobra.ExactArgs(1),
+		Use:   "catption [flags] <input file>",
+		Short: "Cat caption generator CLI",
+		Args:  cobra.ExactArgs(1),
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			logrus.SetLevel(logLevel)
 
@@ -41,8 +42,6 @@ var (
 
 			viper.AutomaticEnv()
 			viper.SetEnvPrefix("catption")
-
-			viper.SetDefault("dirs", dirs)
 
 			if err := viper.ReadInConfig(); err != nil {
 				if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
@@ -80,7 +79,7 @@ var (
 			}
 
 			if open {
-				return exec.Command(openCmd, out).Run()
+				return exec.Command(openCmd, out).Start()
 			}
 
 			return nil
@@ -88,11 +87,34 @@ var (
 	}
 
 	dirCmd = &cobra.Command{
-		Use:  "dir",
-		Long: "Adds a directory to the input files directory",
-		Args: cobra.ExactArgs(1),
+		Use:   "dir",
+		Short: "Manages input files directories",
+	}
+
+	dirAddCmd = &cobra.Command{
+		Use:   "add <directory>",
+		Short: "Adds an input files directory",
+		Args:  cobra.ExactArgs(1),
 		RunE: func(_ *cobra.Command, args []string) error {
 			return addDir(args[0])
+		},
+	}
+
+	dirRemoveCmd = &cobra.Command{
+		Use:   "remove <directory>",
+		Short: "Removes an input files directory",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(_ *cobra.Command, args []string) error {
+			return removeDir(args[0])
+		},
+	}
+
+	dirListCmd = &cobra.Command{
+		Use:   "list",
+		Short: "Lists input files directories",
+		Args:  cobra.NoArgs,
+		Run: func(_ *cobra.Command, args []string) {
+			listDirs()
 		},
 	}
 )
@@ -110,12 +132,14 @@ func init() {
 	cmd.Flags().StringVarP(&out, "out", "o", out, "Output file")
 	cmd.Flags().BoolVar(&open, "open", open, "Open file with system viewer")
 
-	cmd.Flags().StringSlice("dir", nil, "Input files directory")
 	viper.BindPFlag("dirs", cmd.Flags().Lookup("dir"))
 
 	cmd.PersistentFlags().Var((*logLevelValue)(&logLevel), "logLevel", "Log level")
 
 	cmd.AddCommand(dirCmd)
+	dirCmd.AddCommand(dirAddCmd)
+	dirCmd.AddCommand(dirRemoveCmd)
+	dirCmd.AddCommand(dirListCmd)
 }
 
 func main() {
@@ -159,6 +183,32 @@ func addDir(dir string) error {
 	return nil
 }
 
+func removeDir(dir string) error {
+	var index = -1
+	for i, d := range dirs {
+		if d == dir {
+			index = i
+			break
+		}
+	}
+
+	if index == -1 {
+		return nil
+	}
+
+	dirs = append(dirs[:index], dirs[index+1:]...)
+
+	viper.Set("dirs", dirs)
+
+	return viper.WriteConfig()
+}
+
+func listDirs() {
+	for _, d := range dirs {
+		fmt.Println(d)
+	}
+}
+
 func resolveName(name string) (string, error) {
 	names := []string{name}
 
@@ -172,12 +222,16 @@ func resolveName(name string) (string, error) {
 		}
 	}
 
-	dirs := dirs
+	var dirsPath []string
 	if filepath.IsAbs(name) {
-		dirs = []string{""}
+		dirsPath = []string{""}
+	} else {
+		dirsPath = make([]string, len(dirs)+1)
+		dirsPath[0] = "."
+		copy(dirsPath[1:], dirs)
 	}
 
-	for _, dir := range dirs {
+	for _, dir := range dirsPath {
 		for _, name := range names {
 			path := filepath.Join(dir, name)
 
@@ -197,7 +251,7 @@ func resolveName(name string) (string, error) {
 		}
 	}
 
-	return "", fmt.Errorf("%v not found (dirs=%v)", name, dirs)
+	return "", fmt.Errorf("%#v not found (path=%s)", name, strings.Join(dirsPath, ":"))
 }
 
 type logLevelValue logrus.Level
