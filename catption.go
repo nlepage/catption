@@ -163,24 +163,25 @@ func addDir(dir string) error {
 
 	viper.Set("dirs", dirs)
 
-	if err := viper.WriteConfig(); err != nil {
-		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
-			return err
-		}
-
-		configDir, err := os.UserConfigDir()
-		if err != nil {
-			return err
-		}
-
-		configFile := filepath.Join(configDir, "catption.json")
-
-		logrus.Infof("Creating config file %s", configFile)
-
-		return viper.WriteConfigAs(configFile)
+	err := viper.WriteConfig()
+	if err == nil {
+		return nil
 	}
 
-	return nil
+	if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+		return err
+	}
+
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		return err
+	}
+
+	configFile := filepath.Join(configDir, "catption.json")
+
+	logrus.Infof("Creating config file %s", configFile)
+
+	return viper.WriteConfigAs(configFile)
 }
 
 func removeDir(dir string) error {
