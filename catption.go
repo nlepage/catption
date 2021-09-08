@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"mime"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -146,22 +147,36 @@ func addDir(dir string) error {
 }
 
 func resolveName(name string) (string, error) {
-	for _, dir := range dirs {
-		path := filepath.Join(dir, name)
+	names := []string{name}
 
-		stat, err := os.Stat(path)
+	if ext := filepath.Ext(name); ext == "" || mime.TypeByExtension(ext) != "image/jpeg" {
+		exts, err := mime.ExtensionsByType("image/jpeg")
 		if err != nil {
-			if os.IsNotExist(err) {
-				continue
+			panic(err)
+		}
+		for _, ext := range exts {
+			names = append(names, name+ext)
+		}
+	}
+
+	for _, dir := range dirs {
+		for _, name := range names {
+			path := filepath.Join(dir, name)
+
+			stat, err := os.Stat(path)
+			if err != nil {
+				if os.IsNotExist(err) {
+					continue
+				}
+				return "", err
 			}
-			return "", err
-		}
 
-		if stat.IsDir() {
-			return "", fmt.Errorf("%v is a directory", path)
-		}
+			if stat.IsDir() {
+				return "", fmt.Errorf("%v is a directory", path)
+			}
 
-		return path, nil
+			return path, nil
+		}
 	}
 
 	return "", fmt.Errorf("%v not found (dirs=%v)", name, dirs)
