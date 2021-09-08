@@ -7,13 +7,12 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/spf13/pflag"
-
-	catption "github.com/nlepage/catption/lib"
-
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+
+	catption "github.com/nlepage/catption/lib"
 )
 
 var (
@@ -27,7 +26,7 @@ var (
 	logLevel = logrus.InfoLevel
 
 	cmd = &cobra.Command{
-		Use:  "catption",
+		Use:  "catption [flags] <input file>",
 		Long: "Cat caption generator CLI",
 		Args: cobra.ExactArgs(1),
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
@@ -72,6 +71,8 @@ var (
 
 			cat.Top, cat.Bottom = top, bottom
 			cat.Size, cat.FontSize, cat.Margin = size, fontSize, margin
+
+			logrus.Infof("Writing to %s", out)
 
 			if err := cat.SaveJPG(out); err != nil {
 				return err
@@ -118,29 +119,35 @@ func main() {
 }
 
 func addDir(dir string) error {
-	var dirs = viper.GetStringSlice("dirs")
-
 	for _, d := range dirs {
 		if d == dir {
 			return nil
 		}
 	}
 
-	viper.Set("dirs", append(dirs, dir))
+	if len(dirs) == 1 && dirs[0] == "." {
+		dirs = []string{dir}
+	} else {
+		dirs = append(dirs, dir)
+	}
+
+	viper.Set("dirs", dirs)
 
 	if err := viper.WriteConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
 			return err
 		}
 
-		viper.Set("dirs", []string{dir})
-
 		configDir, err := os.UserConfigDir()
 		if err != nil {
 			return err
 		}
 
-		return viper.WriteConfigAs(filepath.Join(configDir, "catption.json"))
+		configFile := filepath.Join(configDir, "catption.json")
+
+		logrus.Infof("Creating config file %s", configFile)
+
+		return viper.WriteConfigAs(configFile)
 	}
 
 	return nil
@@ -159,6 +166,11 @@ func resolveName(name string) (string, error) {
 		}
 	}
 
+	dirs := dirs
+	if filepath.IsAbs(name) {
+		dirs = []string{""}
+	}
+
 	for _, dir := range dirs {
 		for _, name := range names {
 			path := filepath.Join(dir, name)
@@ -172,7 +184,7 @@ func resolveName(name string) (string, error) {
 			}
 
 			if stat.IsDir() {
-				return "", fmt.Errorf("%v is a directory", path)
+				continue
 			}
 
 			return path, nil
