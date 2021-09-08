@@ -20,6 +20,7 @@ var (
 	size, fontSize, margin float64
 	out                    = "out.jpg"
 	dirs                   = []string{"."}
+	open                   = true
 
 	version = "master"
 
@@ -78,7 +79,11 @@ var (
 				return err
 			}
 
-			return exec.Command(openCmd, out).Run()
+			if open {
+				return exec.Command(openCmd, out).Run()
+			}
+
+			return nil
 		},
 	}
 
@@ -103,6 +108,7 @@ func init() {
 	cmd.Flags().Float64Var(&margin, "margin", catption.DefaultMargin, "Top/bottom text margin")
 
 	cmd.Flags().StringVarP(&out, "out", "o", out, "Output file")
+	cmd.Flags().BoolVar(&open, "open", open, "Open file with system viewer")
 
 	cmd.Flags().StringSlice("dir", nil, "Input files directory")
 	viper.BindPFlag("dirs", cmd.Flags().Lookup("dir"))
