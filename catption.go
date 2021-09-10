@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"mime"
 	"os"
@@ -8,6 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/mattn/go-isatty"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -63,6 +65,25 @@ var (
 				return err
 			}
 			logrus.Infof("Found input file %s", path)
+
+			if top == "" && bottom == "" && isatty.IsTerminal(os.Stdout.Fd()) && isatty.IsTerminal(os.Stdin.Fd()) {
+				r := bufio.NewReader(os.Stdin)
+				var err error
+
+				fmt.Print("Top text: ")
+				top, err = r.ReadString('\n')
+				if err != nil {
+					return err
+				}
+				top = top[:len(top)-1]
+
+				fmt.Print("Bottom text: ")
+				bottom, err = r.ReadString('\n')
+				if err != nil {
+					return err
+				}
+				bottom = bottom[:len(bottom)-1]
+			}
 
 			cat, err := catption.LoadJPG(path)
 			if err != nil {
