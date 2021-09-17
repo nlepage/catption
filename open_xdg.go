@@ -2,4 +2,8 @@
 
 package main
 
-const openCmd = "xdg-open"
+import "os/exec"
+
+func openFile(file string) error{
+	return exec.Command("xdg-open", out).Start()
+}

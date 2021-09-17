@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"mime"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 
@@ -100,7 +99,7 @@ var (
 			}
 
 			if open {
-				return exec.Command(openCmd, out).Start()
+				return openFile(out)
 			}
 
 			return nil
