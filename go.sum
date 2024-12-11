@@ -156,6 +156,8 @@ github.com/nlepage/go-js-promise v1.0.0 h1:K7OmJ3+0BgWJ2LfXchg2sI6RDr7AW/KWR8182
 github.com/nlepage/go-js-promise v1.0.0/go.mod h1:bdOP0wObXu34euibyK39K1hoBCtlgTKXGc56AGflaRo=
 github.com/nlepage/go-wasm-http-server/v2 v2.0.2 h1:VAXVFoTctE7booc1bKwWMO3dgQ4LY4fAlpxvWry9M3I=
 github.com/nlepage/go-wasm-http-server/v2 v2.0.2/go.mod h1:r8j7cEOeUqNp+c+C52sNuWaFTvvT/cNqIwBuEtA36HA=
+github.com/nlepage/go-wasm-http-server/v2 v2.0.5 h1:24MooRbGomXxV9dFtP4Z6XCUKlRB39tD8RpL8X1t8hQ=
+github.com/nlepage/go-wasm-http-server/v2 v2.0.5/go.mod h1:r8j7cEOeUqNp+c+C52sNuWaFTvvT/cNqIwBuEtA36HA=
 github.com/oklog/ulid v1.3.1/go.mod h1:CirwcVhetQ6Lv90oh/F+FBtV6XMibvdAFo93nm5qn4U=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=

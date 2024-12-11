@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/gorilla/mux v1.7.4
 	github.com/nlepage/catption/lib v0.0.0-00010101000000-000000000000
-	github.com/nlepage/go-wasm-http-server/v2 v2.0.2
+	github.com/nlepage/go-wasm-http-server/v2 v2.0.5
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/pflag v1.0.5
